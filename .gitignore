@@ -1,0 +1,18 @@
+# Python virtual environment (local dev only)
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# MkDocs generated output — never commit
+site/
+
+# Seeded docs (regenerated on every release — never manually edit)
+docs/azhwars/
+docs/acharyas/
+docs/divya-desham/
+docs/prabhandham/
+
+# Copies of root markdown files seeded into docs/
+docs/index.md
+docs/contributing.md

@@ -1,0 +1,372 @@
+site_name: Nalāyira Divya Prabandham
+site_description: >-
+  A digital book of the Nalāyira Divya Prabandham — 4000 sacred Tamil verses
+  composed by the Āḻvārs, with Tamil scripts, transliteration, meaning, and purport.
+site_author: NDVS
+site_url: https://kausthub-kannan.github.io/ndvs/
+
+repo_name: kausthub-kannan/ndvs
+repo_url: https://github.com/kausthub-kannan/ndvs
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  favicon: assets/favicon.png
+  palette:
+    scheme: slate
+    primary: custom
+    accent: custom
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.collapse
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  font:
+    text: Noto Sans
+    code: Noto Sans Mono
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - tables
+  - attr_list
+  - def_list
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang: en
+
+extra:
+  generator: false
+
+nav:
+  - 'Home': index.md
+  - 'Contributing': contributing.md
+  - 'Āḻvārs':
+    - 'Overview': azhwars/index.md
+    - 'Poygai Āḻvār': azhwars/poygai-alvar.md
+    - 'Bhūtat Āḻvār': azhwars/bhutat-alvar.md
+    - 'Pey Āḻvār': azhwars/pey-alvar.md
+    - 'Tirumalisai Āḻvār': azhwars/tirumalisai-alvar.md
+    - 'Nammāḻvār': azhwars/nammalvar.md
+    - 'Madhurakavi Āḻvār': azhwars/madhurakavi-alvar.md
+    - 'Kulasekara Āḻvār': azhwars/kulasekara-alvar.md
+    - 'Periyāḻvār': azhwars/periyalvar.md
+    - 'Āṇḍāḻ': azhwars/andal.md
+    - 'Toṇḍaraḍippoḍi Āḻvār': azhwars/tondaradippodi-alvar.md
+    - 'Tiruppāṇ Āḻvār': azhwars/tiruppan-alvar.md
+    - 'Tirumaṅgai Āḻvār': azhwars/tirumangai-alvar.md
+  - 'Prabhandhams':
+    - 'Amalanādipirān':
+        - 'Overview': prabhandham/amalanadipiran/index.md
+        - 'Verse 1.01': prabhandham/amalanadipiran/1-01-amalanadhi-piran-adiyarkkennai-atpaduttha.md
+        - 'Verse 1.02': prabhandham/amalanadipiran/1-02-uvanda-ullattanay-ulagam-alandandam.md
+        - 'Verse 1.03': prabhandham/amalanadipiran/1-03-mandi-pay-vada-vengada.md
+        - 'Verse 1.04': prabhandham/amalanadipiran/1-04-sadura-ma-madil-suz.md
+        - 'Verse 1.05': prabhandham/amalanadipiran/1-05-param-aya-pazavinai-patraruttu.md
+        - 'Verse 1.06': prabhandham/amalanadipiran/1-06-tunda-venpiraiyan-tuyar-tirttavan.md
+        - 'Verse 1.07': prabhandham/amalanadipiran/1-07-kaiyin-ar-suri-sanganal.md
+        - 'Verse 1.08': prabhandham/amalanadipiran/1-08-pariyan-agi-vanda-avunan.md
+        - 'Verse 1.09': prabhandham/amalanadipiran/1-09-alama-marattin-ilaimel-oru.md
+        - 'Verse 1.10': prabhandham/amalanadipiran/1-10-kondal-vannanai-kovalanay-venney.md
+    - 'Tirunēṭuntāṇṭakam':
+        - 'Overview': prabhandham/tirunetuntantakam/index.md
+        - 'Verse 1.01': prabhandham/tirunetuntantakam/1-01-min-uruvay-mun-uruvil.md
+        - 'Verse 1.02': prabhandham/tirunetuntantakam/1-02-par-uruvil-nir-erigal.md
+        - 'Verse 1.03': prabhandham/tirunetuntantakam/1-03-tiruvadivil-karu-nedumal-seyan.md
+        - 'Verse 1.04': prabhandham/tirunetuntantakam/1-04-indirarkum-piramarkum-mudalvan-tannai.md
+        - 'Verse 1.05': prabhandham/tirunetuntantakam/1-05-on-midiyil-punal-uruvi.md
+        - 'Verse 1.06': prabhandham/tirunetuntantakam/1-06-alam-purinda-nedun-tadakkai.md
+        - 'Verse 1.07': prabhandham/tirunetuntantakam/1-07-varpudaiya-varai-nedun-tol.md
+        - 'Verse 1.08': prabhandham/tirunetuntantakam/1-08-niragattay-neduvaraiyin-ucci.md
+        - 'Verse 1.09': prabhandham/tirunetuntantakam/1-09-vangattal-ma-mani-vandundu.md
+        - 'Verse 1.10.': prabhandham/tirunetuntantakam/1-10--pon-anay-pozil.md
+        - 'Verse 1.11': prabhandham/tirunetuntantakam/1-11-pattudukkum-ayarttirangum-pavai-penal.md
+        - 'Verse 1.12': prabhandham/tirunetuntantakam/1-12-nenjurugi-kkan-panippa-nirkum.md
+        - 'Verse 1.13': prabhandham/tirunetuntantakam/1-13-kal-eduttu-kkal-mari.md
+        - 'Verse 1.14': prabhandham/tirunetuntantakam/1-14-mulai-kkadirai-kkurungudiyul-mugilai.md
+        - 'Verse 1.15': prabhandham/tirunetuntantakam/1-15-kal-uyarnda-nedu-madil.md
+        - 'Verse 1.16': prabhandham/tirunetuntantakam/1-16-kanru-meyttiniduganda-kalay.md
+        - 'Verse 1.17': prabhandham/tirunetuntantakam/1-17-pongar-mel-ilangongai-ponne.md
+        - 'Verse 1.18': prabhandham/tirunetuntantakam/1-18-kar-vannam-tirumeni-kannum.md
+        - 'Verse 1.19': prabhandham/tirunetuntantakam/1-19-mutrara-vana-mulaiyal-pavai.md
+        - 'Verse 1.20.': prabhandham/tirunetuntantakam/1-20--teralum-val-arakkan-selvam.md
+        - 'Verse 1.21': prabhandham/tirunetuntantakam/1-21-mai-vanna-narungunji-kkuzal.md
+        - 'Verse 1.22': prabhandham/tirunetuntantakam/1-22-naivalam-onraraya-nammai-nokka.md
+        - 'Verse 1.23': prabhandham/tirunetuntantakam/1-23-ul-urum-sindai-noy.md
+        - 'Verse 1.24': prabhandham/tirunetuntantakam/1-24-iru-kaiyil-sangivai-nilla.md
+        - 'Verse 1.25': prabhandham/tirunetuntantakam/1-25-min-ilangu-tiru-uruvum.md
+        - 'Verse 1.26': prabhandham/tirunetuntantakam/1-26-te-maruvu-pozil-idattu.md
+        - 'Verse 1.27': prabhandham/tirunetuntantakam/1-27-sengala-mada-naray.md
+        - 'Verse 1.28': prabhandham/tirunetuntantakam/1-28-ten-ilangai-aran-sidari.md
+        - 'Verse 1.29': prabhandham/tirunetuntantakam/1-29-anrayar-kula-magalukkaraiyan-tannai.md
+        - 'Verse 1.30.': prabhandham/tirunetuntantakam/1-30--minnu-ma-mazai-tavazum.md
+    - 'Tirumālai':
+        - 'Overview': prabhandham/tirumalai/index.md
+        - 'Verse 1.01': prabhandham/tirumalai/1-01-kaval-il-pulanai-vaittu.md
+        - 'Verse 1.02': prabhandham/tirumalai/1-02-paccai-ma-malai-pol.md
+        - 'Verse 1.03': prabhandham/tirumalai/1-03-veda-nul-pirayam-nuru.md
+        - 'Verse 1.04': prabhandham/tirumalai/1-04-moytta-val-vinaiyul-ninru.md
+        - 'Verse 1.05': prabhandham/tirumalai/1-05-pendiral-sugangal-uyppan.md
+        - 'Verse 1.06': prabhandham/tirumalai/1-06-maram-suvar-madil-eduttu.md
+        - 'Verse 1.07': prabhandham/tirumalai/1-07-pulai-aram-agi-ninra.md
+        - 'Verse 1.08': prabhandham/tirumalai/1-08-veruppodu-samanar-mundar.md
+        - 'Verse 1.09': prabhandham/tirumalai/1-09-matrum-or-teyvam-unde.md
+        - 'Verse 1.10.': prabhandham/tirumalai/1-10--nattinan-teyvam-engum.md
+        - 'Verse 1.11': prabhandham/tirumalai/1-11-oru-villal-ongu-munnir.md
+        - 'Verse 1.12': prabhandham/tirumalai/1-12-namanum-murkalanum-pesa.md
+        - 'Verse 1.13': prabhandham/tirumalai/1-13-eriyu-nir-veri-kol.md
+        - 'Verse 1.14': prabhandham/tirumalai/1-14-vandinam-muralum-solai.md
+        - 'Verse 1.15': prabhandham/tirumalai/1-15-meyyarkke-meyyan-agum.md
+        - 'Verse 1.16': prabhandham/tirumalai/1-16-sudanay-kkalvan-agi.md
+        - 'Verse 1.17': prabhandham/tirumalai/1-17-virumbi-ninretta-matten.md
+        - 'Verse 1.18': prabhandham/tirumalai/1-18-ini-tirai-ttivalai-moda.md
+        - 'Verse 1.19': prabhandham/tirumalai/1-19-kuda-disai-mudiyai-vaittu.md
+        - 'Verse 1.20.': prabhandham/tirumalai/1-20--payu-nir-arangan-tannul.md
+        - 'Verse 1.21.': prabhandham/tirumalai/1-21--panivinal-manamadonri.md
+        - 'Verse 1.22': prabhandham/tirumalai/1-22-pesitre-pesal-allal.md
+        - 'Verse 1.23': prabhandham/tirumalai/1-23-kangaiyin-punidam-aya.md
+        - 'Verse 1.24': prabhandham/tirumalai/1-24-vella-nir-parandu-payum.md
+        - 'Verse 1.25': prabhandham/tirumalai/1-25-kulittu-munranalai-ombum.md
+        - 'Verse 1.26': prabhandham/tirumalai/1-26-podellam-podu-kondu.md
+        - 'Verse 1.27': prabhandham/tirumalai/1-27-kurangugal-malaiyai-nukka.md
+        - 'Verse 1.28': prabhandham/tirumalai/1-28-umbaral-ariyal-aga.md
+        - 'Verse 1.29': prabhandham/tirumalai/1-29-ur-ilen-kani-illai.md
+        - 'Verse 1.30.': prabhandham/tirumalai/1-30--manattil-or-tuymai-illai.md
+        - 'Verse 1.31': prabhandham/tirumalai/1-31-tavattular-tammil-allen.md
+        - 'Verse 1.32': prabhandham/tirumalai/1-32-arttu-vandalambum-solai.md
+        - 'Verse 1.33': prabhandham/tirumalai/1-33-mey-ellam-poga-vittu.md
+        - 'Verse 1.34': prabhandham/tirumalai/1-34-ullatte-uraiyum-malai.md
+        - 'Verse 1.35': prabhandham/tirumalai/1-35-tavi-anrulagam-ellam.md
+        - 'Verse 1.36': prabhandham/tirumalai/1-36-mazaikkanru-varai-mun-endum.md
+        - 'Verse 1.37': prabhandham/tirumalai/1-37-telivila-kkalangal-nir-suz.md
+        - 'Verse 1.38': prabhandham/tirumalai/1-38-mem-porul-poga-vittu.md
+        - 'Verse 1.39': prabhandham/tirumalai/1-39-adimaiyil-kudimai-illa.md
+        - 'Verse 1.40.': prabhandham/tirumalai/1-40--tirumaru-marva-ninnai.md
+        - 'Verse 1.41': prabhandham/tirumalai/1-41-van-ular-ariyal-aga.md
+        - 'Verse 1.42': prabhandham/tirumalai/1-42-pazudila-ozugal-atru.md
+        - 'Verse 1.43': prabhandham/tirumalai/1-43-amara-or-angam-arum.md
+        - 'Verse 1.44': prabhandham/tirumalai/1-44-pen-ulam-sadaiyinanum.md
+        - 'Verse 1.45': prabhandham/tirumalai/1-45-valavezum-tavala-mada.md
+    - 'Tiruppaḻḻiyezucci':
+        - 'Overview': prabhandham/tiruppalliyezucci/index.md
+        - 'Verse 1.01': prabhandham/tiruppalliyezucci/1-01-kadiravan-kunadisai-ccigaram-vandanaindan.md
+        - 'Verse 1.02': prabhandham/tiruppalliyezucci/1-02-kozungodi-mullaiyin-kozu-malaranavi.md
+        - 'Verse 1.03': prabhandham/tiruppalliyezucci/1-03-sudar-oli-parandana-suz.md
+        - 'Verse 1.04': prabhandham/tiruppalliyezucci/1-04-mettila-medigal-talaividum-ayargal.md
+        - 'Verse 1.05': prabhandham/tiruppalliyezucci/1-05-pulambina-putkalum-pum-pozilgalin.md
+        - 'Verse 1.06': prabhandham/tiruppalliyezucci/1-06-iraviyar-mani-nedum-terodum.md
+        - 'Verse 1.07': prabhandham/tiruppalliyezucci/1-07-andarattamarargal-kuttangal-ivaiyo.md
+        - 'Verse 1.08': prabhandham/tiruppalliyezucci/1-08-vambaviz-vanavar-vayurai-vazanga.md
+        - 'Verse 1.09': prabhandham/tiruppalliyezucci/1-09-edamil-tannumai-ekkam-mattali.md
+        - 'Verse 1.10.': prabhandham/tiruppalliyezucci/1-10--kadi-malar-kkamalangal-malarndana.md
+    - 'Tiruppāvai':
+        - 'Overview': prabhandham/tiruppavai/index.md
+        - 'Verse 1.01': prabhandham/tiruppavai/1-01-margazi-ttingal-madi-nirainda.md
+        - 'Verse 1.02': prabhandham/tiruppavai/1-02-vaiyattu-vazvirgal-namum.md
+        - 'Verse 1.03': prabhandham/tiruppavai/1-03-ongi-ulagalanda-uttaman-per.md
+        - 'Verse 1.04': prabhandham/tiruppavai/1-04-azi-mazaikkanna-onru.md
+        - 'Verse 1.05': prabhandham/tiruppavai/1-05-mayanai-mannu-vadamadurai-maindanai.md
+        - 'Verse 1.06': prabhandham/tiruppavai/1-06-pullum-silambina-kan-pullaraiyan.md
+        - 'Verse 1.07': prabhandham/tiruppavai/1-07-kisu-kisenrengum-anaiccattan.md
+        - 'Verse 1.08': prabhandham/tiruppavai/1-08-kizvanam-vellenrerumai-siru-vidu.md
+        - 'Verse 1.09': prabhandham/tiruppavai/1-09-tumani-madattu-ccutrum-vilakkeriya.md
+        - 'Verse 1.10': prabhandham/tiruppavai/1-10-notru-ccuvarkkam-puguginra-ammanay.md
+        - 'Verse 1.11': prabhandham/tiruppavai/1-11-katru-kkaravai-kkanangal-pala.md
+        - 'Verse 1.12': prabhandham/tiruppavai/1-12-kanaittilam-katrerumai-kanrukkirangi.md
+        - 'Verse 1.13': prabhandham/tiruppavai/1-13-pullin-vay-kindanai-ppolla.md
+        - 'Verse 1.14': prabhandham/tiruppavai/1-14-ungal-puzaikkadai-ttottattu-vaviyul.md
+        - 'Verse 1.15': prabhandham/tiruppavai/1-15-elle-ilam-kiliye.md
+        - 'Verse 1.16': prabhandham/tiruppavai/1-16-nayaganay-ninra-nandagobanudaiya-koyil.md
+        - 'Verse 1.17': prabhandham/tiruppavai/1-17-ambarame-tannire-sore-aram.md
+        - 'Verse 1.18': prabhandham/tiruppavai/1-18-undu-mada-kalitran-odada.md
+        - 'Verse 1.19': prabhandham/tiruppavai/1-19-kuttu-vilakkeriya-kottukkal-kattil.md
+        - 'Verse 1.20': prabhandham/tiruppavai/1-20-muppattu-muvar-amararkku-mun.md
+        - 'Verse 1.21': prabhandham/tiruppavai/1-21-etra-kalangal-edir-pongi.md
+        - 'Verse 1.22': prabhandham/tiruppavai/1-22-angan-ma-nalattarasar.md
+        - 'Verse 1.23': prabhandham/tiruppavai/1-23-mari-malai-muzainjil-manni.md
+        - 'Verse 1.24': prabhandham/tiruppavai/1-24-anrivvulagam-alanday-adi-potri.md
+        - 'Verse 1.25': prabhandham/tiruppavai/1-25-orutti-maganay-ppirandu.md
+        - 'Verse 1.26': prabhandham/tiruppavai/1-26-male-manivanna.md
+        - 'Verse 1.27': prabhandham/tiruppavai/1-27-kudarai-vellum-sir-kovinda.md
+        - 'Verse 1.28': prabhandham/tiruppavai/1-28-karavaigal-pin-senru-kananjerndunbom.md
+        - 'Verse 1.29': prabhandham/tiruppavai/1-29-sitram-sirugale-vandunnai-ccevittu.md
+        - 'Verse 1.30': prabhandham/tiruppavai/1-30-vanga-kkadal-kadainda-madavanai.md
+    - 'Thirupallāṇḍu':
+        - 'Overview': prabhandham/thirupallandu/index.md
+        - 'Verse 1.01': prabhandham/thirupallandu/1-01-pallandu-pallandu-pallayirattandu.md
+        - 'Verse 1.02': prabhandham/thirupallandu/1-02-adiyomodum-ninnodum.md
+        - 'Verse 1.03': prabhandham/thirupallandu/1-03-vazat-pattu-ninrir-ullirel.md
+        - 'Verse 1.04': prabhandham/thirupallandu/1-04-edu-nilattil-iduvadan-munnam.md
+        - 'Verse 1.05': prabhandham/thirupallandu/1-05-andakkulattukkadibadi-agi.md
+        - 'Verse 1.06': prabhandham/thirupallandu/1-06-endai-tandai-tandai-tandai.md
+        - 'Verse 1.07': prabhandham/thirupallandu/1-07-tiyir-poliginra-senjudar-azi.md
+        - 'Verse 1.08': prabhandham/thirupallandu/1-08-neyyidai-nallador-sorum.md
+        - 'Verse 1.09': prabhandham/thirupallandu/1-09-uduttu-kkalainda-nin-pidagavadai.md
+        - 'Verse 1.10': prabhandham/thirupallandu/1-10-ennal-emberuman.md
+        - 'Verse 1.11': prabhandham/thirupallandu/1-11-alvazakkonrum-illa.md
+        - 'Verse 1.12': prabhandham/thirupallandu/1-12-pallandenru-pavittiranai.md
+    - 'Kaṇṇinuṇciṟuttāmpu':
+        - 'Overview': prabhandham/kanninunciruttampu/index.md
+        - 'Verse 1.01': prabhandham/kanninunciruttampu/1-01-kanni-nun-siru-ttambinal.md
+        - 'Verse 1.02': prabhandham/kanninunciruttampu/1-02-navinal-navitru.md
+        - 'Verse 1.03': prabhandham/kanninunciruttampu/1-03-tiri-tandagilum.md
+        - 'Verse 1.04': prabhandham/kanninunciruttampu/1-04-nanmaiyal-mikka.md
+        - 'Verse 1.05': prabhandham/kanninunciruttampu/1-05-nambinen.md
+        - 'Verse 1.06': prabhandham/kanninunciruttampu/1-06-inru-tottum.md
+        - 'Verse 1.07': prabhandham/kanninunciruttampu/1-07-kandu-kondennai.md
+        - 'Verse 1.08': prabhandham/kanninunciruttampu/1-08-arul-kondadum.md
+        - 'Verse 1.09': prabhandham/kanninunciruttampu/1-09-mikka-vediyar.md
+        - 'Verse 1.10.': prabhandham/kanninunciruttampu/1-10--payan-anragilum.md
+        - 'Verse 1.11': prabhandham/kanninunciruttampu/1-11-anban-tannai.md
+  - 'Divya Deśams':
+    - 'Overview': divya-desham/index.md
+    - 'Śrī Raṅganātha': divya-desham/sri-ranganatha.md
+    - 'Śrīnivāsa': divya-desham/srinivasa.md
+    - 'Aḻagiya Maṇavāḷa Perumāḷ': divya-desham/alagiya-manavala-perumal.md
+    - 'Puruṣottama Perumāḷ': divya-desham/purusottama-perumal.md
+    - 'Puṇḍarīkākṣa Perumāḷ': divya-desham/pundarikaksa-perumal.md
+    - 'Vaḍivazhagiya Nambi Perumāḷ': divya-desham/vadivazhagiya-nambi-perumal.md
+    - 'Appakkudathān Perumāḷ': divya-desham/appakkudathan-perumal.md
+    - 'Nīlamegha Perumāḷ': divya-desham/nilamegha-perumal.md
+    - 'Hara Śāpa Vimocana Perumāḷ': divya-desham/hara-sapa-vimocana-perumal.md
+    - 'Jagadrakṣaka (Āḍuturai) Perumāḷ': divya-desham/jagadraksaka-aduturai-perumal.md
+    - 'Gajendra Varada Perumāḷ': divya-desham/gajendra-varada-perumal.md
+    - 'Valvil Rāma Perumāḷ': divya-desham/valvil-rama-perumal.md
+    - 'Āṇḍu Aḷakkum Ayan Perumāḷ': divya-desham/andu-alakkum-ayan-perumal.md
+    - 'Śārṅgapāṇi Perumāḷ': divya-desham/sarngapani-perumal.md
+    - 'Oppiliappan Perumāḷ': divya-desham/oppiliappan-perumal.md
+    - 'Parimala Raṅganātha Perumāḷ': divya-desham/parimala-ranganatha-perumal.md
+    - 'Devādi Rāja Perumāḷ': divya-desham/devadi-raja-perumal.md
+    - 'Aruḷmākadal Perumāḷ': divya-desham/arulmakadal-perumal.md
+    - 'Sowrirāja Nīlamegha Perumāḷ': divya-desham/sowriraja-nilamegha-perumal.md
+    - 'Soundaryarāja Nīlamegha Perumāḷ': divya-desham/soundaryaraja-nilamegha-perumal.md
+    - 'Lokanātha Perumāḷ': divya-desham/lokanatha-perumal.md
+    - 'Nānmadhiya Perumāḷ': divya-desham/nanmadhiya-perumal.md
+    - 'Tirunaraiyūr Nambi Perumāḷ': divya-desham/tirunaraiyur-nambi-perumal.md
+    - 'Sāraṇātha Perumāḷ': divya-desham/saranatha-perumal.md
+    - 'Bhaktavatsala Perumāḷ': divya-desham/bhaktavatsala-perumal.md
+    - 'Jaganātha Perumāḷ': divya-desham/jaganatha-perumal.md
+    - 'Kola Valvilli Rāma Perumāḷ': divya-desham/kola-valvilli-rama-perumal.md
+    - 'Trivikrama Perumāḷ': divya-desham/trivikrama-perumal.md
+    - 'Śrīnivāsa Perumāḷ': divya-desham/srinivasa-perumal.md
+    - 'Deiva Nāyaka Perumāḷ': divya-desham/deiva-nayaka-perumal.md
+    - 'Lakṣmī Narasiṁha Perumāḷ': divya-desham/laksmi-narasimha-perumal.md
+    - 'Gopāla Kṛṣṇa Perumāḷ': divya-desham/gopala-krsna-perumal.md
+    - 'Varadarāja Perumāḷ': divya-desham/varadaraja-perumal.md
+    - 'Tamaraiyāḷ Kēḷvan Perumāḷ': divya-desham/tamaraiyal-kelvan-perumal.md
+    - 'Nārāyaṇa Perumāḷ': divya-desham/narayana-perumal.md
+    - 'Kuḍamāḍu Kūttan Perumāḷ': divya-desham/kudamadu-kuttan-perumal.md
+    - 'Śeṅgaṇmāl Raṅganātha Perumāḷ': divya-desham/senganmal-ranganatha-perumal.md
+    - 'Pēraruḷāḷan Perumāḷ': divya-desham/perarulalan-perumal.md
+    - 'Puruṣottama Perumāḷ': divya-desham/purusottama-perumal.md
+    - 'Vaikuṇṭha Nāthan Perumāḷ': divya-desham/vaikuntha-nathan-perumal.md
+    - 'Govindarāja Perumāḷ': divya-desham/govindaraja-perumal.md
+    - 'Deiva Nāyaka Perumāḷ': divya-desham/deiva-nayaka-perumal.md
+    - 'Trivikrama Perumāḷ': divya-desham/trivikrama-perumal.md
+    - 'Varadarāja Perumāḷ': divya-desham/varadaraja-perumal.md
+    - 'Ādikeśava Perumāḷ': divya-desham/adikesava-perumal.md
+    - 'Yathoktakāri Perumāḷ': divya-desham/yathoktakari-perumal.md
+    - 'Aḻagiya Siṅgar Perumāḷ': divya-desham/alagiya-singar-perumal.md
+    - 'Dīpa Prakāśa Perumāḷ': divya-desham/dipa-prakasa-perumal.md
+    - 'Ādi Varāha Perumāḷ': divya-desham/adi-varaha-perumal.md
+    - 'Ulagāḷanda Perumāḷ': divya-desham/ulagalanda-perumal.md
+    - 'Jagadīśa Perumāḷ': divya-desham/jagadisa-perumal.md
+    - 'Karuṇākara Perumāḷ': divya-desham/karunakara-perumal.md
+    - 'Tirukkārvāṇar Perumāḷ': divya-desham/tirukkarvanar-perumal.md
+    - 'Vaikuṇṭha Perumāḷ': divya-desham/vaikuntha-perumal.md
+    - 'Pavala Vaṇṇar Perumāḷ': divya-desham/pavala-vannar-perumal.md
+    - 'Nilāttiṅgaḷ Tuṇḍattān Perumāḷ': divya-desham/nilattingal-tundattan-perumal.md
+    - 'Pāṇḍava Dūta Perumāḷ': divya-desham/pandava-duta-perumal.md
+    - 'Vijayarāghava Perumāḷ': divya-desham/vijayaraghava-perumal.md
+    - 'Pārthasārathi Perumāḷ': divya-desham/parthasarathi-perumal.md
+    - 'Nīrvanna Perumāḷ': divya-desham/nirvanna-perumal.md
+    - 'Nitya Kalyāṇa Perumāḷ': divya-desham/nitya-kalyana-perumal.md
+    - 'Sthala Śayana Perumāḷ': divya-desham/sthala-sayana-perumal.md
+    - 'Bhaktavatsala Perumāḷ': divya-desham/bhaktavatsala-perumal.md
+    - 'Vīrarāghava Perumāḷ': divya-desham/viraraghava-perumal.md
+    - 'Yoga Narasiṁha Svāmi': divya-desham/yoga-narasimha-svami.md
+    - 'Kūḍal Aḻagar Perumāḷ': divya-desham/kudal-alagar-perumal.md
+    - 'Kālamegha Perumāḷ': divya-desham/kalamegha-perumal.md
+    - 'Kallazhagar Perumāḷ': divya-desham/kallazhagar-perumal.md
+    - 'Uraga Mellanāyān Perumāḷ': divya-desham/uraga-mellanayan-perumal.md
+    - 'Satyagiri Nātha Perumāḷ': divya-desham/satyagiri-natha-perumal.md
+    - 'Kalyāṇa Jagannātha Perumāḷ': divya-desham/kalyana-jagannatha-perumal.md
+    - 'Ninra Nārāyaṇa Perumāḷ': divya-desham/ninra-narayana-perumal.md
+    - 'Vaḍapatra Śāyī Perumāḷ': divya-desham/vadapatra-sayi-perumal.md
+    - 'Vaikuṇṭhanātha Perumāḷ': divya-desham/vaikunthanatha-perumal.md
+    - 'Vijayāsana Perumāḷ': divya-desham/vijayasana-perumal.md
+    - 'Kāycina Vēnda Perumāḷ': divya-desham/kaycina-venda-perumal.md
+    - 'Śrīnivāsa Perumāḷ': divya-desham/srinivasa-perumal.md
+    - 'Aravinda Lōcana Perumāḷ': divya-desham/aravinda-locana-perumal.md
+    - 'Makara Neḍuṅkuzhaikkādar Perumāḷ': divya-desham/makara-nedunkuzhaikkadar-perumal.md
+    - 'Vaitha Mānidhi Perumāḷ': divya-desham/vaitha-manidhi-perumal.md
+    - 'Ādinātha Perumāḷ': divya-desham/adinatha-perumal.md
+    - 'Tōṭādri Nātha Perumāḷ': divya-desham/totadri-natha-perumal.md
+    - 'Ninra Nambi Perumāḷ': divya-desham/ninra-nambi-perumal.md
+    - 'Kuralappa Perumāḷ': divya-desham/kuralappa-perumal.md
+    - 'Ādikeśava Perumāḷ': divya-desham/adikesava-perumal.md
+    - 'Ananta Padmanābha Svāmi': divya-desham/ananta-padmanabha-svami.md
+    - 'Māyappirān Perumāḷ': divya-desham/mayappiran-perumal.md
+    - 'Imayavarappa Perumāḷ': divya-desham/imayavarappa-perumal.md
+    - 'Pārthasārathi Perumāḷ': divya-desham/parthasarathi-perumal.md
+    - 'Pāmbaṇaiyappa Perumāḷ': divya-desham/pambanaiyappa-perumal.md
+    - 'Kolapirān Perumāḷ': divya-desham/kolapiran-perumal.md
+    - 'Adbhuta Nārāyaṇa Perumāḷ': divya-desham/adbhuta-narayana-perumal.md
+    - 'Kāṭkarai Appan Perumāḷ': divya-desham/katkarai-appan-perumal.md
+    - 'Mūḻikkalattān Perumāḷ': divya-desham/mulikkalattan-perumal.md
+    - 'Uyyavanda Perumāḷ': divya-desham/uyyavanda-perumal.md
+    - 'Nāvāy Mukunda Perumāḷ': divya-desham/navay-mukunda-perumal.md
+    - 'Nava Narasiṁha Perumāḷ': divya-desham/nava-narasimha-perumal.md
+    - 'Kalyāṇa Nārāyaṇa Perumāḷ': divya-desham/kalyana-narayana-perumal.md
+    - 'Śrī Rāma Perumāḷ': divya-desham/sri-rama-perumal.md
+    - 'Devarāja Perumāḷ': divya-desham/devaraja-perumal.md
+    - 'Navamōhana Kṛṣṇa Perumāḷ': divya-desham/navamohana-krsna-perumal.md
+    - 'Govardhana Nēśa Perumāḷ': divya-desham/govardhana-nesa-perumal.md
+    - 'Nīlamegha Perumāḷ': divya-desham/nilamegha-perumal.md
+    - 'Paramapuruṣa Perumāḷ': divya-desham/paramapurusa-perumal.md
+    - 'Badrī Nārāyaṇa Perumāḷ': divya-desham/badri-narayana-perumal.md
+    - 'Mūrti Perumāḷ': divya-desham/murti-perumal.md
+    - 'Vyūha Vāsudeva': divya-desham/vyuha-vasudeva.md
+    - 'Para Vāsudeva': divya-desham/para-vasudeva.md
+  - 'Ācāryas':
+    - 'Overview': acharyas/index.md
+    - 'Nāthamuni': acharyas/nathamuni.md
+    - 'Uyyakkoṇḍār (Pundarīkākṣa)': acharyas/uyyakkondar-pundarikaksa.md
+    - 'Maṇakkāl Nambi (Rāmamiśra)': acharyas/manakkal-nambi-ramamisra.md
+    - 'Āḷavandār (Yāmunācārya)': acharyas/alavandar-yamunacarya.md
+    - 'Periya Nambi (Mahāpūrṇa)': acharyas/periya-nambi-mahapurna.md
+    - 'Tirukkōṣṭiyūr Nambi': acharyas/tirukkostiyur-nambi.md
+    - 'Tirumalai Āṇḍān': acharyas/tirumalai-andan.md
+    - 'Tirumalai Nambi': acharyas/tirumalai-nambi.md
+    - 'Rāmānuja': acharyas/ramanuja.md
+    - 'Kūrattāḻvān': acharyas/kurattalvan.md
+    - 'Mudaliyāṇḍān': acharyas/mudaliyandan.md
+    - 'Piḷḷān (Kūrēśa’s son)': acharyas/pillan-kuresas-son.md
+    - 'Nāñjīyar': acharyas/nanjiyar.md
+    - 'Nampiḷḷai': acharyas/nampillai.md
+    - 'Periyavāccān Piḷḷai': acharyas/periyavaccan-pillai.md
+    - 'Vadakku Tiruvīḍhi Piḷḷai': acharyas/vadakku-tiruvidhi-pillai.md
+    - 'Piḷḷai Lōkācārya': acharyas/pillai-lokacarya.md
+    - 'Āḻagiya Maṇavāḷa Perumāḷ Nāyaṉār': acharyas/alagiya-manavala-perumal-nayanar.md
+    - 'Vedānta Deśika': acharyas/vedanta-desika.md
+    - 'Maṇavāḷa Māmuṉigaḷ': acharyas/manavala-mamunigal.md
+    - 'Ādivaṇ Śaṭakōpa Jeer': acharyas/adivan-satakopa-jeer.md

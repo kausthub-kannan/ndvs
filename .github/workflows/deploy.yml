@@ -1,0 +1,52 @@
+name: Build & Deploy to GitHub Pages
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write   # needed for gh-deploy to push to gh-pages branch
+
+jobs:
+  build-and-deploy:
+    name: Seed Docs → MkDocs → GitHub Pages
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout full history (mkdocs gh-deploy needs git history) ─────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ── 2. Set up Python ──────────────────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      # ── 3. Install MkDocs + Material theme ───────────────────────────────
+      - name: Install MkDocs dependencies
+        run: |
+          pip install --upgrade pip
+          pip install \
+            mkdocs>=1.6.0 \
+            mkdocs-material>=9.5.0 \
+            pymdown-extensions>=10.7
+
+      # ── 4. Seed all pages from CSVs ───────────────────────────────────────
+      - name: Seed docs from CSV data
+        run: python scripts/seed_docs.py
+
+      # ── 5. Validate the build (strict mode catches broken links / nav) ────
+      - name: Validate MkDocs build
+        run: mkdocs build --strict --site-dir /tmp/ndvs-site
+
+      # ── 6. Deploy to GitHub Pages (gh-pages branch) ───────────────────────
+      - name: Deploy to GitHub Pages
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          mkdocs gh-deploy --force --clean --message "deploy: release ${{ github.ref_name }}"
