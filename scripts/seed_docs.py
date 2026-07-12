@@ -430,7 +430,7 @@ def seed_prabhandham() -> list:
             # Sidebar label: "Verse 1.01 · amal" — si_no + first 4 chars of first word
             first_line = english.split("\n")[0].replace("\\", "").strip()
             first_words = first_line.split()
-            suffix = slugify(" ".join(first_words[:4]))[:20] if first_words else ""
+            suffix = slugify(" ".join(first_words[:4]))[:15] if first_words else ""
             label = f"Verse {si} · {suffix}" if suffix else f"Verse {si}"
             child_entries.append({label: f"prabhandham/{p_slug}/{fname}"})
 
