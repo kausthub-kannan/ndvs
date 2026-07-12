@@ -14,75 +14,66 @@
 /* ── CSS Custom Properties ─────────────────────────────────────────────────── */
 :root,
 [data-md-color-scheme="slate"] {
-  /* Core palette */
   --ndvs-bg:          #1A1A1A;
   --ndvs-surface:     #242424;
-  --ndvs-surface-alt: #2E2E2E;
+  --ndvs-surface-alt: #2A2A2A;
   --ndvs-primary:     #E8904B;
   --ndvs-secondary:   #C96A2A;
   --ndvs-text:        #FFFFFF;
-  --ndvs-text-muted:  #B0A090;
-  --ndvs-border:      #3A3A3A;
+  --ndvs-text-muted:  #A89888;
+  --ndvs-border:      #333333;
 
-  /* MkDocs Material token overrides */
-  --md-default-bg-color:           var(--ndvs-bg);
-  --md-default-fg-color:           var(--ndvs-text);
-  --md-default-fg-color--light:    var(--ndvs-text-muted);
-  --md-default-fg-color--lighter:  #806050;
-  --md-default-fg-color--lightest: #5a4030;
+  /* Material token overrides */
+  --md-default-bg-color:             var(--ndvs-bg);
+  --md-default-fg-color:             var(--ndvs-text);
+  --md-default-fg-color--light:      var(--ndvs-text-muted);
+  --md-default-fg-color--lighter:    #6a5a50;
+  --md-default-fg-color--lightest:   #3a2a20;
 
-  --md-primary-fg-color:           var(--ndvs-primary);
-  --md-primary-fg-color--light:    #F0A870;
-  --md-primary-fg-color--dark:     var(--ndvs-secondary);
-  --md-primary-bg-color:           var(--ndvs-bg);
-  --md-primary-bg-color--light:    var(--ndvs-surface);
+  --md-primary-fg-color:             #E8904B;
+  --md-primary-fg-color--light:      #F0A870;
+  --md-primary-fg-color--dark:       #C96A2A;
+  --md-primary-bg-color:             #1A1A1A;
+  --md-primary-bg-color--light:      #242424;
 
-  --md-accent-fg-color:            var(--ndvs-secondary);
-  --md-accent-fg-color--transparent: rgba(200, 106, 42, 0.15);
-  --md-accent-bg-color:            var(--ndvs-bg);
+  --md-accent-fg-color:              #C96A2A;
+  --md-accent-fg-color--transparent: rgba(201, 106, 42, 0.12);
+  --md-accent-bg-color:              #1A1A1A;
 
-  /* Code surfaces */
-  --md-code-bg-color:              #1F1F1F;
-  --md-code-fg-color:              #F0C9A0;
-  --md-code-hl-color:              rgba(232, 144, 75, 0.1);
+  --md-code-bg-color:                #1E1E1E;
+  --md-code-fg-color:                #E0B898;
+  --md-code-hl-color:                rgba(232, 144, 75, 0.08);
 
-  /* Typeset */
-  --md-typeset-color:              var(--ndvs-text);
-  --md-typeset-a-color:            var(--ndvs-primary);
-  --md-typeset-table-color:        rgba(232, 144, 75, 0.08);
+  --md-typeset-color:                var(--ndvs-text);
+  --md-typeset-a-color:              #E8904B;
+  --md-typeset-table-color:          rgba(232, 144, 75, 0.06);
 
-  /* Header */
-  --md-header-bg-color:            #111111;
-
-  /* Sidebar */
-  --md-sidebar-bg-color:           var(--ndvs-surface);
-
-  /* Footer */
-  --md-footer-bg-color:            #111111;
-  --md-footer-fg-color:            var(--ndvs-text-muted);
+  /* Reduce base font size globally */
+  --md-typeset-base:                 0.8rem;
 }
 
-/* ── Global resets ─────────────────────────────────────────────────────────── */
+/* ── Base font scale ─────────────────────────────────────────────────────────*/
+html {
+  font-size: 13px;
+}
+
 body {
   background-color: var(--ndvs-bg) !important;
   color: var(--ndvs-text) !important;
 }
 
-/* ── Header ─────────────────────────────────────────────────────────────────── */
+/* ── Header ──────────────────────────────────────────────────────────────────*/
 .md-header {
   background-color: #111111 !important;
   border-bottom: 1px solid var(--ndvs-border);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
 .md-header__title {
-  color: var(--ndvs-primary) !important;
+  color: #E8904B !important;
   font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-.md-logo img {
-  filter: brightness(1.2);
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
 }
 
 /* ── Navigation Tabs ─────────────────────────────────────────────────────────*/
@@ -93,17 +84,21 @@ body {
 
 .md-tabs__link {
   color: var(--ndvs-text-muted) !important;
+  font-size: 0.75rem;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
-.md-tabs__link:hover,
+.md-tabs__link:hover {
+  color: #E8904B !important;
+}
+
 .md-tabs__link--active {
-  color: var(--ndvs-primary) !important;
+  color: #E8904B !important;
 }
 
 .md-tabs__indicator {
-  background-color: var(--ndvs-primary) !important;
+  background-color: #E8904B !important;
   height: 2px;
 }
 
@@ -113,152 +108,183 @@ body {
 }
 
 .md-nav__title {
-  color: var(--ndvs-primary) !important;
+  color: #E8904B !important;
   font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-size: 0.65rem;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 .md-nav__link {
   color: var(--ndvs-text-muted) !important;
+  font-size: 0.72rem;
+  line-height: 1.4;
   transition: color 0.15s ease, padding-left 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .md-nav__link:hover {
-  color: var(--ndvs-primary) !important;
-  padding-left: 0.5rem;
+  color: #E8904B !important;
+  padding-left: 0.3rem;
 }
 
 .md-nav__link--active {
-  color: var(--ndvs-primary) !important;
+  color: #E8904B !important;
   font-weight: 600;
-  border-left: 2px solid var(--ndvs-primary);
-  padding-left: 0.5rem;
+  border-left: 2px solid #E8904B;
+  padding-left: 0.3rem;
 }
 
-/* ── Main content area ───────────────────────────────────────────────────────*/
+/* Nav section toggle arrows */
+.md-nav__icon {
+  color: var(--ndvs-text-muted) !important;
+}
+
+/* ── Main content ────────────────────────────────────────────────────────────*/
 .md-content {
   background-color: var(--ndvs-bg);
 }
 
-.md-main__inner {
-  padding-top: 1.5rem;
+.md-content__inner {
+  padding: 1rem 1.2rem;
+  max-width: 860px;
 }
 
 /* ── Typography ──────────────────────────────────────────────────────────────*/
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--ndvs-text);
+}
+
 .md-typeset h1 {
-  color: var(--ndvs-primary) !important;
+  color: #E8904B !important;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.35rem;
   letter-spacing: -0.01em;
-  border-bottom: 2px solid var(--ndvs-secondary);
-  padding-bottom: 0.4rem;
-  margin-bottom: 1.2rem;
+  border-bottom: 2px solid #C96A2A;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
+  margin-top: 0;
 }
 
 .md-typeset h2 {
-  color: var(--ndvs-primary) !important;
+  color: #E8904B !important;
   font-weight: 600;
-  font-size: 1.4rem;
-  border-left: 3px solid var(--ndvs-secondary);
-  padding-left: 0.6rem;
-  margin-top: 2rem;
+  font-size: 1rem;
+  border-left: 3px solid #C96A2A;
+  padding-left: 0.5rem;
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .md-typeset h3 {
   color: #F0A870 !important;
   font-weight: 600;
+  font-size: 0.88rem;
+  margin-top: 1rem;
 }
 
 .md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
   color: var(--ndvs-text-muted) !important;
+  font-size: 0.82rem;
 }
 
 .md-typeset p {
   color: var(--ndvs-text);
-  line-height: 1.8;
+  font-size: 0.8rem;
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
 }
 
 .md-typeset a {
-  color: var(--ndvs-primary) !important;
+  color: #E8904B !important;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.15s ease;
 }
 
 .md-typeset a:hover {
-  border-bottom-color: var(--ndvs-primary);
+  border-bottom-color: #E8904B;
 }
 
 /* ── Blockquotes (Meaning sections) ──────────────────────────────────────────*/
 .md-typeset blockquote {
-  background-color: rgba(232, 144, 75, 0.08);
-  border-left: 4px solid var(--ndvs-primary);
-  border-radius: 0 6px 6px 0;
-  padding: 1rem 1.25rem;
-  margin: 1.25rem 0;
+  background-color: rgba(232, 144, 75, 0.07);
+  border-left: 3px solid #E8904B;
+  border-radius: 0 4px 4px 0;
+  padding: 0.6rem 0.9rem;
+  margin: 0.75rem 0;
   color: var(--ndvs-text) !important;
   font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.75;
+  font-size: 0.82rem;
+  line-height: 1.7;
 }
 
 .md-typeset blockquote p {
   margin: 0;
+  font-size: 0.82rem;
 }
 
 /* ── Code blocks (Tamil / Transliteration) ───────────────────────────────────*/
 .md-typeset code {
-  background-color: var(--md-code-bg-color) !important;
-  color: var(--md-code-fg-color) !important;
-  border-radius: 4px;
-  padding: 0.15em 0.4em;
-  font-family: 'Noto Sans Mono', monospace;
-  font-size: 0.9em;
+  background-color: #1E1E1E !important;
+  color: #E0B898 !important;
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+  font-size: 0.78rem;
 }
 
 .md-typeset pre {
   background-color: #1A1A1A !important;
   border: 1px solid var(--ndvs-border);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  margin: 0.5rem 0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
 .md-typeset pre code {
   background-color: transparent !important;
-  color: #F0C9A0 !important;
-  font-size: 1rem;
-  line-height: 1.9;
+  color: #E0B898 !important;
+  font-size: 0.78rem;
+  line-height: 1.75;
   white-space: pre-wrap;
   word-break: break-word;
+  padding: 0;
 }
 
 /* ── Tables ──────────────────────────────────────────────────────────────────*/
 .md-typeset table:not([class]) {
-  width: 100%;
+  width: auto;
+  min-width: 40%;
+  max-width: 100%;
   border-collapse: collapse;
-  font-size: 0.9rem;
-  margin: 1.2rem 0;
+  font-size: 0.75rem;
+  margin: 0.75rem 0;
 }
 
 .md-typeset table:not([class]) th {
-  background-color: var(--ndvs-secondary) !important;
-  color: var(--ndvs-text) !important;
+  background-color: #C96A2A !important;
+  color: #FFFFFF !important;
   font-weight: 600;
-  padding: 0.6rem 1rem;
+  padding: 0.35rem 0.65rem;
   text-align: left;
   border: none;
+  white-space: nowrap;
 }
 
 .md-typeset table:not([class]) td {
   background-color: var(--ndvs-surface) !important;
   color: var(--ndvs-text) !important;
-  padding: 0.55rem 1rem;
+  padding: 0.3rem 0.65rem;
   border-bottom: 1px solid var(--ndvs-border);
   vertical-align: top;
+  font-size: 0.75rem;
+  line-height: 1.45;
 }
 
 .md-typeset table:not([class]) tr:hover td {
@@ -269,18 +295,19 @@ body {
 .md-typeset hr {
   border: none;
   border-top: 1px solid var(--ndvs-border);
-  margin: 2rem 0;
+  margin: 1.2rem 0;
 }
 
 /* ── Search ──────────────────────────────────────────────────────────────────*/
 .md-search__form {
   background-color: var(--ndvs-surface) !important;
   border: 1px solid var(--ndvs-border);
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .md-search__input {
   color: var(--ndvs-text) !important;
+  font-size: 0.78rem;
 }
 
 .md-search__input::placeholder {
@@ -292,7 +319,8 @@ body {
 }
 
 .md-search-result__title {
-  color: var(--ndvs-primary) !important;
+  color: #E8904B !important;
+  font-size: 0.78rem;
 }
 
 /* ── Footer ──────────────────────────────────────────────────────────────────*/
@@ -307,76 +335,56 @@ body {
 
 .md-footer__link {
   color: var(--ndvs-text-muted) !important;
+  font-size: 0.72rem;
 }
 
 .md-footer__link:hover {
-  color: var(--ndvs-primary) !important;
+  color: #E8904B !important;
 }
 
 /* ── Scrollbar ───────────────────────────────────────────────────────────────*/
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--ndvs-bg); }
+::-webkit-scrollbar-thumb { background-color: var(--ndvs-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background-color: #C96A2A; }
 
-::-webkit-scrollbar-track {
-  background: var(--ndvs-bg);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--ndvs-border);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--ndvs-secondary);
-}
-
-/* ── Admonitions (mkdocs-material) ───────────────────────────────────────────*/
+/* ── Admonitions ─────────────────────────────────────────────────────────────*/
 .md-typeset .admonition,
 .md-typeset details {
   background-color: var(--ndvs-surface) !important;
-  border-color: var(--ndvs-primary) !important;
-  border-radius: 6px;
+  border-color: #E8904B !important;
+  border-radius: 4px;
+  font-size: 0.78rem;
 }
 
 .md-typeset .admonition-title,
 .md-typeset summary {
-  background-color: rgba(232, 144, 75, 0.15) !important;
-  color: var(--ndvs-primary) !important;
+  background-color: rgba(232, 144, 75, 0.12) !important;
+  color: #E8904B !important;
+  font-size: 0.78rem;
 }
 
-/* ── Verse page specific layouts ─────────────────────────────────────────────*/
-/* Make Tamil/transliteration code blocks stand out more */
-.md-typeset h2 + pre,
-.md-typeset h3 + pre {
-  margin-top: 0.5rem;
-}
-
-/* Metadata table at the top of pages */
-.md-typeset > table:first-of-type th:first-child {
-  width: 9rem;
-}
-
-/* ── Back-to-top button ──────────────────────────────────────────────────────*/
+/* ── Back-to-top ─────────────────────────────────────────────────────────────*/
 .md-top {
-  background-color: var(--ndvs-primary) !important;
-  color: var(--ndvs-bg) !important;
+  background-color: #E8904B !important;
+  color: #1A1A1A !important;
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(232, 144, 75, 0.4);
+  font-size: 0.75rem;
+  box-shadow: 0 2px 8px rgba(232, 144, 75, 0.35);
 }
 
-/* ── TOC ─────────────────────────────────────────────────────────────────────*/
+/* ── TOC (right sidebar) ──────────────────────────────────────────────────────*/
 .md-nav--secondary .md-nav__link {
   color: var(--ndvs-text-muted) !important;
+  font-size: 0.7rem;
 }
 
 .md-nav--secondary .md-nav__link--active {
-  color: var(--ndvs-primary) !important;
+  color: #E8904B !important;
 }
 
-/* ── Selection highlight ─────────────────────────────────────────────────────*/
+/* ── Selection ───────────────────────────────────────────────────────────────*/
 ::selection {
-  background-color: rgba(232, 144, 75, 0.3);
+  background-color: rgba(232, 144, 75, 0.25);
   color: var(--ndvs-text);
 }
