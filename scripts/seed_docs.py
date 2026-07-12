@@ -328,15 +328,18 @@ def render_prabhandham_index(prabhandham_name: str, rows: list[dict]) -> str:
         "",
         f"*{prabhandham_name}* is part of the sacred Divya Prabandham.",
         "",
-        "| Verse | Āḻvār |",
-        "|---|---|",
+        "| Verse | Āḻvār | Pasuram (English) |",
+        "|---|---|---|",
     ]
     for r in rows:
         si = r.get("si_no", "").strip()
         azhwar = r.get("azhwar", "").strip()
         english = fix_newlines(r.get("english_scripts", ""))
         slug = pasuram_slug(si, english)
-        lines.append(f"| [{si}]({slug}.md) | {azhwar} |")
+        # First 4 words of transliteration as a readable preview
+        first_line = english.split("\n")[0].replace("\\", "").strip()
+        preview = " ".join(first_line.split()[:4])
+        lines.append(f"| [{si}]({slug}.md) | {azhwar} | *{preview}…* |")
     return "\n".join(lines)
 
 
