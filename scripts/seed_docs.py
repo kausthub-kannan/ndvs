@@ -427,7 +427,11 @@ def seed_prabhandham() -> list:
             verse_slug = pasuram_slug(si, english)
             fname = f"{verse_slug}.md"
             write(p_dir / fname, render_pasuram(r))
-            label = f"Verse {si}"
+            # Sidebar label: "Verse 1.01 · amal" — si_no + first 4 chars of first word
+            first_line = english.split("\n")[0].replace("\\", "").strip()
+            first_words = first_line.split()
+            suffix = slugify(" ".join(first_words[:4]))[:20] if first_words else ""
+            label = f"Verse {si} · {suffix}" if suffix else f"Verse {si}"
             child_entries.append({label: f"prabhandham/{p_slug}/{fname}"})
 
         nav_entries.append({prabhandham_name: child_entries})
