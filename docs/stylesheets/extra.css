@@ -54,7 +54,7 @@
 
 /* ── Base font scale ─────────────────────────────────────────────────────────*/
 html {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 body {
@@ -74,6 +74,25 @@ body {
   font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 0.01em;
+}
+
+/* ── Logo size ───────────────────────────────────────────────────────────────*/
+.md-header__button.md-logo img {
+  height: 48px !important;
+  width: auto !important;
+}
+
+/* ── GitHub repo icon (top-right source button) ──────────────────────────────*/
+.md-source__icon svg {
+  fill: #E8904B !important;
+}
+
+.md-source__facts {
+  color: #E8904B !important;
+}
+
+.md-source__repository {
+  color: #E8904B !important;
 }
 
 /* ── Navigation Tabs ─────────────────────────────────────────────────────────*/
@@ -103,8 +122,9 @@ body {
 }
 
 /* ── Sidebar ─────────────────────────────────────────────────────────────────*/
-.md-sidebar {
-  background-color: var(--ndvs-surface) !important;
+.md-sidebar,
+.md-sidebar--secondary {
+  background-color: transparent !important;
 }
 
 .md-nav__title {
@@ -115,10 +135,16 @@ body {
   text-transform: uppercase;
 }
 
+/* ── Sidebar nav: ALL first-level items (Āḻvār names, prabhandham names, etc.)
+   Both collapsible labels and plain leaf links share the same style            */
+.md-nav__item--nested > label.md-nav__link,
+.md-nav__item--section > .md-nav__link,
 .md-nav__link {
-  color: var(--ndvs-text-muted) !important;
-  font-size: 0.72rem;
-  line-height: 1.4;
+  color: #E8904B !important;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
   transition: color 0.15s ease, padding-left 0.15s ease;
   white-space: nowrap;
   overflow: hidden;
@@ -126,21 +152,38 @@ body {
 }
 
 .md-nav__link:hover {
-  color: #E8904B !important;
+  color: #F0A870 !important;
   padding-left: 0.3rem;
 }
 
 .md-nav__link--active {
   color: #E8904B !important;
-  font-weight: 600;
   border-left: 2px solid #E8904B;
   padding-left: 0.3rem;
+}
+
+/* ── Sidebar nav: second-level items (verse links inside a prabhandham group) -*/
+.md-nav__item--nested .md-nav .md-nav__link {
+  color: var(--ndvs-text-muted) !important;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.md-nav__item--nested .md-nav .md-nav__link:hover {
+  color: #E8904B !important;
+}
+
+.md-nav__item--nested .md-nav .md-nav__link--active {
+  color: #E8904B !important;
+  font-weight: 600;
 }
 
 /* Nav section toggle arrows */
 .md-nav__icon {
   color: var(--ndvs-text-muted) !important;
 }
+
 
 /* ── Main content ────────────────────────────────────────────────────────────*/
 .md-content {
@@ -388,3 +431,160 @@ body {
   background-color: rgba(232, 144, 75, 0.25);
   color: var(--ndvs-text);
 }
+
+/* ── Attribute tag pills ─────────────────────────────────────────────────────*/
+.ndvs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.6rem 0 1rem;
+}
+
+.ndvs-tag {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: 999px;
+  overflow: hidden;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1;
+  border: 1px solid var(--ndvs-border);
+}
+
+.ndvs-tag__key {
+  background-color: #C96A2A;
+  color: #FFFFFF;
+  padding: 0.28rem 0.55rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.63rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Each value chip inside the pill */
+.ndvs-tag__val {
+  background-color: var(--ndvs-surface);
+  color: var(--ndvs-text);
+  padding: 0.28rem 0.55rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Divider between consecutive value chips */
+.ndvs-tag__val + .ndvs-tag__val {
+  border-left: 1px solid var(--ndvs-border);
+}
+
+/* ── Verse / bio quote block ─────────────────────────────────────────────────*/
+.ndvs-verse {
+  text-align: center;
+  margin: 0.75rem auto;
+  padding: 0.6rem 1rem;
+  color: var(--ndvs-text);
+  font-size: 0.85rem;
+  line-height: 1.9;
+  max-width: 680px;
+}
+
+.ndvs-verse em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ndvs-text);
+}
+
+/* ── Tamil / Transliteration script toggle ───────────────────────────────────*/
+.ndvs-script-toggle {
+  margin: 0.5rem 0 1rem;
+}
+
+.ndvs-script-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid var(--ndvs-border);
+}
+
+.ndvs-script-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;          /* overlap the container border */
+  padding: 0.35rem 1rem;
+  color: var(--ndvs-text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.ndvs-script-tab:hover {
+  color: #E8904B;
+}
+
+.ndvs-script-tab--active {
+  color: #E8904B !important;
+  border-bottom-color: #E8904B !important;
+}
+
+/* ── Utility ─────────────────────────────────────────────────────────────────*/
+.ndvs-hidden {
+  display: none !important;
+}
+
+/* ── Discord "Join Community" button in the tabs bar ─────────────────────────*/
+.ndvs-discord-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: auto;               /* pushes to the far right of the tabs bar */
+  align-self: center;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  color: #ffffff !important;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none !important;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.ndvs-discord-btn:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.5);
+  border-bottom-color: transparent !important;  /* suppress tab underline */
+}
+
+.ndvs-discord-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(124, 58, 237, 0.4);
+}
+
+.ndvs-discord-btn svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex-shrink: 0;
+}
+
+/* Keep the tabs list from consuming all the horizontal space
+   so the button's margin-left: auto can push it right       */
+.md-tabs__inner {
+  display: flex !important;
+  align-items: center;
+}
+
+.md-tabs__list {
+  flex: 0 1 auto;
+}
+

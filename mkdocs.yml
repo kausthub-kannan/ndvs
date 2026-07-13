@@ -1,4 +1,4 @@
-site_name: Nalāyira Divya Prabandham
+site_name: Namāmyaham Drāviḍa Veda Sāgaram (NDVS)
 site_description: >-
   A digital book of the Nalāyira Divya Prabandham — 4000 sacred Tamil verses
   composed by the Āḻvārs, with Tamil scripts, transliteration, meaning, and purport.
@@ -13,7 +13,8 @@ site_dir: site
 
 theme:
   name: material
-  favicon: assets/favicon.png
+  favicon: assets/android-icon-foreground.png
+  logo: assets/android-icon-foreground.png
   palette:
     scheme: slate
     primary: custom
@@ -21,7 +22,6 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
     - navigation.collapse
     - navigation.top
     - navigation.indexes
@@ -35,6 +35,9 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - assets/scripts/ndvs.js
 
 markdown_extensions:
   - admonition
@@ -58,185 +61,169 @@ extra:
   generator: false
 
 nav:
-  - 'Home': index.md
-  - 'Contributing': contributing.md
-  - 'Āḻvārs':
-    - 'Overview': azhwars/index.md
-    - 'Poygai Āḻvār': azhwars/poygai-alvar.md
-    - 'Bhūtat Āḻvār': azhwars/bhutat-alvar.md
-    - 'Pey Āḻvār': azhwars/pey-alvar.md
-    - 'Tirumalisai Āḻvār': azhwars/tirumalisai-alvar.md
-    - 'Nammāḻvār': azhwars/nammalvar.md
-    - 'Madhurakavi Āḻvār': azhwars/madhurakavi-alvar.md
-    - 'Kulasekara Āḻvār': azhwars/kulasekara-alvar.md
-    - 'Periyāḻvār': azhwars/periyalvar.md
-    - 'Āṇḍāḻ': azhwars/andal.md
-    - 'Toṇḍaraḍippoḍi Āḻvār': azhwars/tondaradippodi-alvar.md
-    - 'Tiruppāṇ Āḻvār': azhwars/tiruppan-alvar.md
-    - 'Tirumaṅgai Āḻvār': azhwars/tirumangai-alvar.md
   - 'Prabhandhams':
     - 'Amalanādipirān':
         - 'Overview': prabhandham/amalanadipiran/index.md
-        - 'Verse 1.01': prabhandham/amalanadipiran/1-01-amalanadhi-piran-adiyarkkennai-atpaduttha.md
-        - 'Verse 1.02': prabhandham/amalanadipiran/1-02-uvanda-ullattanay-ulagam-alandandam.md
-        - 'Verse 1.03': prabhandham/amalanadipiran/1-03-mandi-pay-vada-vengada.md
-        - 'Verse 1.04': prabhandham/amalanadipiran/1-04-sadura-ma-madil-suz.md
-        - 'Verse 1.05': prabhandham/amalanadipiran/1-05-param-aya-pazavinai-patraruttu.md
-        - 'Verse 1.06': prabhandham/amalanadipiran/1-06-tunda-venpiraiyan-tuyar-tirttavan.md
-        - 'Verse 1.07': prabhandham/amalanadipiran/1-07-kaiyin-ar-suri-sanganal.md
-        - 'Verse 1.08': prabhandham/amalanadipiran/1-08-pariyan-agi-vanda-avunan.md
-        - 'Verse 1.09': prabhandham/amalanadipiran/1-09-alama-marattin-ilaimel-oru.md
-        - 'Verse 1.10': prabhandham/amalanadipiran/1-10-kondal-vannanai-kovalanay-venney.md
+        - 'Verse 1.01 · amalanadhi-pira': prabhandham/amalanadipiran/1-01-amalanadhi-piran-adiyarkkennai-atpaduttha.md
+        - 'Verse 1.02 · uvanda-ullattan': prabhandham/amalanadipiran/1-02-uvanda-ullattanay-ulagam-alandandam.md
+        - 'Verse 1.03 · mandi-pay-vada-': prabhandham/amalanadipiran/1-03-mandi-pay-vada-vengada.md
+        - 'Verse 1.04 · sadura-ma-madil': prabhandham/amalanadipiran/1-04-sadura-ma-madil-suz.md
+        - 'Verse 1.05 · param-aya-pazav': prabhandham/amalanadipiran/1-05-param-aya-pazavinai-patraruttu.md
+        - 'Verse 1.06 · tunda-venpiraiy': prabhandham/amalanadipiran/1-06-tunda-venpiraiyan-tuyar-tirttavan.md
+        - 'Verse 1.07 · kaiyin-ar-suri-': prabhandham/amalanadipiran/1-07-kaiyin-ar-suri-sanganal.md
+        - 'Verse 1.08 · pariyan-agi-van': prabhandham/amalanadipiran/1-08-pariyan-agi-vanda-avunan.md
+        - 'Verse 1.09 · alama-marattin-': prabhandham/amalanadipiran/1-09-alama-marattin-ilaimel-oru.md
+        - 'Verse 1.10 · kondal-vannanai': prabhandham/amalanadipiran/1-10-kondal-vannanai-kovalanay-venney.md
     - 'Tirunēṭuntāṇṭakam':
         - 'Overview': prabhandham/tirunetuntantakam/index.md
-        - 'Verse 1.01': prabhandham/tirunetuntantakam/1-01-min-uruvay-mun-uruvil.md
-        - 'Verse 1.02': prabhandham/tirunetuntantakam/1-02-par-uruvil-nir-erigal.md
-        - 'Verse 1.03': prabhandham/tirunetuntantakam/1-03-tiruvadivil-karu-nedumal-seyan.md
-        - 'Verse 1.04': prabhandham/tirunetuntantakam/1-04-indirarkum-piramarkum-mudalvan-tannai.md
-        - 'Verse 1.05': prabhandham/tirunetuntantakam/1-05-on-midiyil-punal-uruvi.md
-        - 'Verse 1.06': prabhandham/tirunetuntantakam/1-06-alam-purinda-nedun-tadakkai.md
-        - 'Verse 1.07': prabhandham/tirunetuntantakam/1-07-varpudaiya-varai-nedun-tol.md
-        - 'Verse 1.08': prabhandham/tirunetuntantakam/1-08-niragattay-neduvaraiyin-ucci.md
-        - 'Verse 1.09': prabhandham/tirunetuntantakam/1-09-vangattal-ma-mani-vandundu.md
-        - 'Verse 1.10.': prabhandham/tirunetuntantakam/1-10--pon-anay-pozil.md
-        - 'Verse 1.11': prabhandham/tirunetuntantakam/1-11-pattudukkum-ayarttirangum-pavai-penal.md
-        - 'Verse 1.12': prabhandham/tirunetuntantakam/1-12-nenjurugi-kkan-panippa-nirkum.md
-        - 'Verse 1.13': prabhandham/tirunetuntantakam/1-13-kal-eduttu-kkal-mari.md
-        - 'Verse 1.14': prabhandham/tirunetuntantakam/1-14-mulai-kkadirai-kkurungudiyul-mugilai.md
-        - 'Verse 1.15': prabhandham/tirunetuntantakam/1-15-kal-uyarnda-nedu-madil.md
-        - 'Verse 1.16': prabhandham/tirunetuntantakam/1-16-kanru-meyttiniduganda-kalay.md
-        - 'Verse 1.17': prabhandham/tirunetuntantakam/1-17-pongar-mel-ilangongai-ponne.md
-        - 'Verse 1.18': prabhandham/tirunetuntantakam/1-18-kar-vannam-tirumeni-kannum.md
-        - 'Verse 1.19': prabhandham/tirunetuntantakam/1-19-mutrara-vana-mulaiyal-pavai.md
-        - 'Verse 1.20.': prabhandham/tirunetuntantakam/1-20--teralum-val-arakkan-selvam.md
-        - 'Verse 1.21': prabhandham/tirunetuntantakam/1-21-mai-vanna-narungunji-kkuzal.md
-        - 'Verse 1.22': prabhandham/tirunetuntantakam/1-22-naivalam-onraraya-nammai-nokka.md
-        - 'Verse 1.23': prabhandham/tirunetuntantakam/1-23-ul-urum-sindai-noy.md
-        - 'Verse 1.24': prabhandham/tirunetuntantakam/1-24-iru-kaiyil-sangivai-nilla.md
-        - 'Verse 1.25': prabhandham/tirunetuntantakam/1-25-min-ilangu-tiru-uruvum.md
-        - 'Verse 1.26': prabhandham/tirunetuntantakam/1-26-te-maruvu-pozil-idattu.md
-        - 'Verse 1.27': prabhandham/tirunetuntantakam/1-27-sengala-mada-naray.md
-        - 'Verse 1.28': prabhandham/tirunetuntantakam/1-28-ten-ilangai-aran-sidari.md
-        - 'Verse 1.29': prabhandham/tirunetuntantakam/1-29-anrayar-kula-magalukkaraiyan-tannai.md
-        - 'Verse 1.30.': prabhandham/tirunetuntantakam/1-30--minnu-ma-mazai-tavazum.md
+        - 'Verse 1.01 · min-uruvay-mun-': prabhandham/tirunetuntantakam/1-01-min-uruvay-mun-uruvil.md
+        - 'Verse 1.02 · par-uruvil-nir-': prabhandham/tirunetuntantakam/1-02-par-uruvil-nir-erigal.md
+        - 'Verse 1.03 · tiruvadivil-kar': prabhandham/tirunetuntantakam/1-03-tiruvadivil-karu-nedumal-seyan.md
+        - 'Verse 1.04 · indirarkum-pira': prabhandham/tirunetuntantakam/1-04-indirarkum-piramarkum-mudalvan-tannai.md
+        - 'Verse 1.05 · on-midiyil-puna': prabhandham/tirunetuntantakam/1-05-on-midiyil-punal-uruvi.md
+        - 'Verse 1.06 · alam-purinda-ne': prabhandham/tirunetuntantakam/1-06-alam-purinda-nedun-tadakkai.md
+        - 'Verse 1.07 · varpudaiya-vara': prabhandham/tirunetuntantakam/1-07-varpudaiya-varai-nedun-tol.md
+        - 'Verse 1.08 · niragattay-nedu': prabhandham/tirunetuntantakam/1-08-niragattay-neduvaraiyin-ucci.md
+        - 'Verse 1.09 · vangattal-ma-ma': prabhandham/tirunetuntantakam/1-09-vangattal-ma-mani-vandundu.md
+        - 'Verse 1.10. · pon-anay-pozil': prabhandham/tirunetuntantakam/1-10--pon-anay-pozil.md
+        - 'Verse 1.11 · pattudukkum-aya': prabhandham/tirunetuntantakam/1-11-pattudukkum-ayarttirangum-pavai-penal.md
+        - 'Verse 1.12 · nenjurugi-kkan-': prabhandham/tirunetuntantakam/1-12-nenjurugi-kkan-panippa-nirkum.md
+        - 'Verse 1.13 · kal-eduttu-kkal': prabhandham/tirunetuntantakam/1-13-kal-eduttu-kkal-mari.md
+        - 'Verse 1.14 · mulai-kkadirai-': prabhandham/tirunetuntantakam/1-14-mulai-kkadirai-kkurungudiyul-mugilai.md
+        - 'Verse 1.15 · kal-uyarnda-ned': prabhandham/tirunetuntantakam/1-15-kal-uyarnda-nedu-madil.md
+        - 'Verse 1.16 · kanru-meyttinid': prabhandham/tirunetuntantakam/1-16-kanru-meyttiniduganda-kalay.md
+        - 'Verse 1.17 · pongar-mel-ilan': prabhandham/tirunetuntantakam/1-17-pongar-mel-ilangongai-ponne.md
+        - 'Verse 1.18 · kar-vannam-tiru': prabhandham/tirunetuntantakam/1-18-kar-vannam-tirumeni-kannum.md
+        - 'Verse 1.19 · mutrara-vana-mu': prabhandham/tirunetuntantakam/1-19-mutrara-vana-mulaiyal-pavai.md
+        - 'Verse 1.20. · teralum-val-ara': prabhandham/tirunetuntantakam/1-20--teralum-val-arakkan-selvam.md
+        - 'Verse 1.21 · mai-vanna-narun': prabhandham/tirunetuntantakam/1-21-mai-vanna-narungunji-kkuzal.md
+        - 'Verse 1.22 · naivalam-onrara': prabhandham/tirunetuntantakam/1-22-naivalam-onraraya-nammai-nokka.md
+        - 'Verse 1.23 · ul-urum-sindai-': prabhandham/tirunetuntantakam/1-23-ul-urum-sindai-noy.md
+        - 'Verse 1.24 · iru-kaiyil-sang': prabhandham/tirunetuntantakam/1-24-iru-kaiyil-sangivai-nilla.md
+        - 'Verse 1.25 · min-ilangu-tiru': prabhandham/tirunetuntantakam/1-25-min-ilangu-tiru-uruvum.md
+        - 'Verse 1.26 · te-maruvu-pozil': prabhandham/tirunetuntantakam/1-26-te-maruvu-pozil-idattu.md
+        - 'Verse 1.27 · sengala-mada-na': prabhandham/tirunetuntantakam/1-27-sengala-mada-naray.md
+        - 'Verse 1.28 · ten-ilangai-ara': prabhandham/tirunetuntantakam/1-28-ten-ilangai-aran-sidari.md
+        - 'Verse 1.29 · anrayar-kula-ma': prabhandham/tirunetuntantakam/1-29-anrayar-kula-magalukkaraiyan-tannai.md
+        - 'Verse 1.30. · minnu-ma-mazai-': prabhandham/tirunetuntantakam/1-30--minnu-ma-mazai-tavazum.md
     - 'Tirumālai':
         - 'Overview': prabhandham/tirumalai/index.md
-        - 'Verse 1.01': prabhandham/tirumalai/1-01-kaval-il-pulanai-vaittu.md
-        - 'Verse 1.02': prabhandham/tirumalai/1-02-paccai-ma-malai-pol.md
-        - 'Verse 1.03': prabhandham/tirumalai/1-03-veda-nul-pirayam-nuru.md
-        - 'Verse 1.04': prabhandham/tirumalai/1-04-moytta-val-vinaiyul-ninru.md
-        - 'Verse 1.05': prabhandham/tirumalai/1-05-pendiral-sugangal-uyppan.md
-        - 'Verse 1.06': prabhandham/tirumalai/1-06-maram-suvar-madil-eduttu.md
-        - 'Verse 1.07': prabhandham/tirumalai/1-07-pulai-aram-agi-ninra.md
-        - 'Verse 1.08': prabhandham/tirumalai/1-08-veruppodu-samanar-mundar.md
-        - 'Verse 1.09': prabhandham/tirumalai/1-09-matrum-or-teyvam-unde.md
-        - 'Verse 1.10.': prabhandham/tirumalai/1-10--nattinan-teyvam-engum.md
-        - 'Verse 1.11': prabhandham/tirumalai/1-11-oru-villal-ongu-munnir.md
-        - 'Verse 1.12': prabhandham/tirumalai/1-12-namanum-murkalanum-pesa.md
-        - 'Verse 1.13': prabhandham/tirumalai/1-13-eriyu-nir-veri-kol.md
-        - 'Verse 1.14': prabhandham/tirumalai/1-14-vandinam-muralum-solai.md
-        - 'Verse 1.15': prabhandham/tirumalai/1-15-meyyarkke-meyyan-agum.md
-        - 'Verse 1.16': prabhandham/tirumalai/1-16-sudanay-kkalvan-agi.md
-        - 'Verse 1.17': prabhandham/tirumalai/1-17-virumbi-ninretta-matten.md
-        - 'Verse 1.18': prabhandham/tirumalai/1-18-ini-tirai-ttivalai-moda.md
-        - 'Verse 1.19': prabhandham/tirumalai/1-19-kuda-disai-mudiyai-vaittu.md
-        - 'Verse 1.20.': prabhandham/tirumalai/1-20--payu-nir-arangan-tannul.md
-        - 'Verse 1.21.': prabhandham/tirumalai/1-21--panivinal-manamadonri.md
-        - 'Verse 1.22': prabhandham/tirumalai/1-22-pesitre-pesal-allal.md
-        - 'Verse 1.23': prabhandham/tirumalai/1-23-kangaiyin-punidam-aya.md
-        - 'Verse 1.24': prabhandham/tirumalai/1-24-vella-nir-parandu-payum.md
-        - 'Verse 1.25': prabhandham/tirumalai/1-25-kulittu-munranalai-ombum.md
-        - 'Verse 1.26': prabhandham/tirumalai/1-26-podellam-podu-kondu.md
-        - 'Verse 1.27': prabhandham/tirumalai/1-27-kurangugal-malaiyai-nukka.md
-        - 'Verse 1.28': prabhandham/tirumalai/1-28-umbaral-ariyal-aga.md
-        - 'Verse 1.29': prabhandham/tirumalai/1-29-ur-ilen-kani-illai.md
-        - 'Verse 1.30.': prabhandham/tirumalai/1-30--manattil-or-tuymai-illai.md
-        - 'Verse 1.31': prabhandham/tirumalai/1-31-tavattular-tammil-allen.md
-        - 'Verse 1.32': prabhandham/tirumalai/1-32-arttu-vandalambum-solai.md
-        - 'Verse 1.33': prabhandham/tirumalai/1-33-mey-ellam-poga-vittu.md
-        - 'Verse 1.34': prabhandham/tirumalai/1-34-ullatte-uraiyum-malai.md
-        - 'Verse 1.35': prabhandham/tirumalai/1-35-tavi-anrulagam-ellam.md
-        - 'Verse 1.36': prabhandham/tirumalai/1-36-mazaikkanru-varai-mun-endum.md
-        - 'Verse 1.37': prabhandham/tirumalai/1-37-telivila-kkalangal-nir-suz.md
-        - 'Verse 1.38': prabhandham/tirumalai/1-38-mem-porul-poga-vittu.md
-        - 'Verse 1.39': prabhandham/tirumalai/1-39-adimaiyil-kudimai-illa.md
-        - 'Verse 1.40.': prabhandham/tirumalai/1-40--tirumaru-marva-ninnai.md
-        - 'Verse 1.41': prabhandham/tirumalai/1-41-van-ular-ariyal-aga.md
-        - 'Verse 1.42': prabhandham/tirumalai/1-42-pazudila-ozugal-atru.md
-        - 'Verse 1.43': prabhandham/tirumalai/1-43-amara-or-angam-arum.md
-        - 'Verse 1.44': prabhandham/tirumalai/1-44-pen-ulam-sadaiyinanum.md
-        - 'Verse 1.45': prabhandham/tirumalai/1-45-valavezum-tavala-mada.md
+        - 'Verse 1.01 · kaval-il-pulana': prabhandham/tirumalai/1-01-kaval-il-pulanai-vaittu.md
+        - 'Verse 1.02 · paccai-ma-malai': prabhandham/tirumalai/1-02-paccai-ma-malai-pol.md
+        - 'Verse 1.03 · veda-nul-piraya': prabhandham/tirumalai/1-03-veda-nul-pirayam-nuru.md
+        - 'Verse 1.04 · moytta-val-vina': prabhandham/tirumalai/1-04-moytta-val-vinaiyul-ninru.md
+        - 'Verse 1.05 · pendiral-sugang': prabhandham/tirumalai/1-05-pendiral-sugangal-uyppan.md
+        - 'Verse 1.06 · maram-suvar-mad': prabhandham/tirumalai/1-06-maram-suvar-madil-eduttu.md
+        - 'Verse 1.07 · pulai-aram-agi-': prabhandham/tirumalai/1-07-pulai-aram-agi-ninra.md
+        - 'Verse 1.08 · veruppodu-saman': prabhandham/tirumalai/1-08-veruppodu-samanar-mundar.md
+        - 'Verse 1.09 · matrum-or-teyva': prabhandham/tirumalai/1-09-matrum-or-teyvam-unde.md
+        - 'Verse 1.10. · nattinan-teyvam': prabhandham/tirumalai/1-10--nattinan-teyvam-engum.md
+        - 'Verse 1.11 · oru-villal-ongu': prabhandham/tirumalai/1-11-oru-villal-ongu-munnir.md
+        - 'Verse 1.12 · namanum-murkala': prabhandham/tirumalai/1-12-namanum-murkalanum-pesa.md
+        - 'Verse 1.13 · eriyu-nir-veri-': prabhandham/tirumalai/1-13-eriyu-nir-veri-kol.md
+        - 'Verse 1.14 · vandinam-muralu': prabhandham/tirumalai/1-14-vandinam-muralum-solai.md
+        - 'Verse 1.15 · meyyarkke-meyya': prabhandham/tirumalai/1-15-meyyarkke-meyyan-agum.md
+        - 'Verse 1.16 · sudanay-kkalvan': prabhandham/tirumalai/1-16-sudanay-kkalvan-agi.md
+        - 'Verse 1.17 · virumbi-ninrett': prabhandham/tirumalai/1-17-virumbi-ninretta-matten.md
+        - 'Verse 1.18 · ini-tirai-ttiva': prabhandham/tirumalai/1-18-ini-tirai-ttivalai-moda.md
+        - 'Verse 1.19 · kuda-disai-mudi': prabhandham/tirumalai/1-19-kuda-disai-mudiyai-vaittu.md
+        - 'Verse 1.20. · payu-nir-aranga': prabhandham/tirumalai/1-20--payu-nir-arangan-tannul.md
+        - 'Verse 1.21. · panivinal-manam': prabhandham/tirumalai/1-21--panivinal-manamadonri.md
+        - 'Verse 1.22 · pesitre-pesal-a': prabhandham/tirumalai/1-22-pesitre-pesal-allal.md
+        - 'Verse 1.23 · kangaiyin-punid': prabhandham/tirumalai/1-23-kangaiyin-punidam-aya.md
+        - 'Verse 1.24 · vella-nir-paran': prabhandham/tirumalai/1-24-vella-nir-parandu-payum.md
+        - 'Verse 1.25 · kulittu-munrana': prabhandham/tirumalai/1-25-kulittu-munranalai-ombum.md
+        - 'Verse 1.26 · podellam-podu-k': prabhandham/tirumalai/1-26-podellam-podu-kondu.md
+        - 'Verse 1.27 · kurangugal-mala': prabhandham/tirumalai/1-27-kurangugal-malaiyai-nukka.md
+        - 'Verse 1.28 · umbaral-ariyal-': prabhandham/tirumalai/1-28-umbaral-ariyal-aga.md
+        - 'Verse 1.29 · ur-ilen-kani-il': prabhandham/tirumalai/1-29-ur-ilen-kani-illai.md
+        - 'Verse 1.30. · manattil-or-tuy': prabhandham/tirumalai/1-30--manattil-or-tuymai-illai.md
+        - 'Verse 1.31 · tavattular-tamm': prabhandham/tirumalai/1-31-tavattular-tammil-allen.md
+        - 'Verse 1.32 · arttu-vandalamb': prabhandham/tirumalai/1-32-arttu-vandalambum-solai.md
+        - 'Verse 1.33 · mey-ellam-poga-': prabhandham/tirumalai/1-33-mey-ellam-poga-vittu.md
+        - 'Verse 1.34 · ullatte-uraiyum': prabhandham/tirumalai/1-34-ullatte-uraiyum-malai.md
+        - 'Verse 1.35 · tavi-anrulagam-': prabhandham/tirumalai/1-35-tavi-anrulagam-ellam.md
+        - 'Verse 1.36 · mazaikkanru-var': prabhandham/tirumalai/1-36-mazaikkanru-varai-mun-endum.md
+        - 'Verse 1.37 · telivila-kkalan': prabhandham/tirumalai/1-37-telivila-kkalangal-nir-suz.md
+        - 'Verse 1.38 · mem-porul-poga-': prabhandham/tirumalai/1-38-mem-porul-poga-vittu.md
+        - 'Verse 1.39 · adimaiyil-kudim': prabhandham/tirumalai/1-39-adimaiyil-kudimai-illa.md
+        - 'Verse 1.40. · tirumaru-marva-': prabhandham/tirumalai/1-40--tirumaru-marva-ninnai.md
+        - 'Verse 1.41 · van-ular-ariyal': prabhandham/tirumalai/1-41-van-ular-ariyal-aga.md
+        - 'Verse 1.42 · pazudila-ozugal': prabhandham/tirumalai/1-42-pazudila-ozugal-atru.md
+        - 'Verse 1.43 · amara-or-angam-': prabhandham/tirumalai/1-43-amara-or-angam-arum.md
+        - 'Verse 1.44 · pen-ulam-sadaiy': prabhandham/tirumalai/1-44-pen-ulam-sadaiyinanum.md
+        - 'Verse 1.45 · valavezum-taval': prabhandham/tirumalai/1-45-valavezum-tavala-mada.md
     - 'Tiruppaḻḻiyezucci':
         - 'Overview': prabhandham/tiruppalliyezucci/index.md
-        - 'Verse 1.01': prabhandham/tiruppalliyezucci/1-01-kadiravan-kunadisai-ccigaram-vandanaindan.md
-        - 'Verse 1.02': prabhandham/tiruppalliyezucci/1-02-kozungodi-mullaiyin-kozu-malaranavi.md
-        - 'Verse 1.03': prabhandham/tiruppalliyezucci/1-03-sudar-oli-parandana-suz.md
-        - 'Verse 1.04': prabhandham/tiruppalliyezucci/1-04-mettila-medigal-talaividum-ayargal.md
-        - 'Verse 1.05': prabhandham/tiruppalliyezucci/1-05-pulambina-putkalum-pum-pozilgalin.md
-        - 'Verse 1.06': prabhandham/tiruppalliyezucci/1-06-iraviyar-mani-nedum-terodum.md
-        - 'Verse 1.07': prabhandham/tiruppalliyezucci/1-07-andarattamarargal-kuttangal-ivaiyo.md
-        - 'Verse 1.08': prabhandham/tiruppalliyezucci/1-08-vambaviz-vanavar-vayurai-vazanga.md
-        - 'Verse 1.09': prabhandham/tiruppalliyezucci/1-09-edamil-tannumai-ekkam-mattali.md
-        - 'Verse 1.10.': prabhandham/tiruppalliyezucci/1-10--kadi-malar-kkamalangal-malarndana.md
+        - 'Verse 1.01 · kadiravan-kunad': prabhandham/tiruppalliyezucci/1-01-kadiravan-kunadisai-ccigaram-vandanaindan.md
+        - 'Verse 1.02 · kozungodi-mulla': prabhandham/tiruppalliyezucci/1-02-kozungodi-mullaiyin-kozu-malaranavi.md
+        - 'Verse 1.03 · sudar-oli-paran': prabhandham/tiruppalliyezucci/1-03-sudar-oli-parandana-suz.md
+        - 'Verse 1.04 · mettila-medigal': prabhandham/tiruppalliyezucci/1-04-mettila-medigal-talaividum-ayargal.md
+        - 'Verse 1.05 · pulambina-putka': prabhandham/tiruppalliyezucci/1-05-pulambina-putkalum-pum-pozilgalin.md
+        - 'Verse 1.06 · iraviyar-mani-n': prabhandham/tiruppalliyezucci/1-06-iraviyar-mani-nedum-terodum.md
+        - 'Verse 1.07 · andarattamararg': prabhandham/tiruppalliyezucci/1-07-andarattamarargal-kuttangal-ivaiyo.md
+        - 'Verse 1.08 · vambaviz-vanava': prabhandham/tiruppalliyezucci/1-08-vambaviz-vanavar-vayurai-vazanga.md
+        - 'Verse 1.09 · edamil-tannumai': prabhandham/tiruppalliyezucci/1-09-edamil-tannumai-ekkam-mattali.md
+        - 'Verse 1.10. · kadi-malar-kkam': prabhandham/tiruppalliyezucci/1-10--kadi-malar-kkamalangal-malarndana.md
     - 'Tiruppāvai':
         - 'Overview': prabhandham/tiruppavai/index.md
-        - 'Verse 1.01': prabhandham/tiruppavai/1-01-margazi-ttingal-madi-nirainda.md
-        - 'Verse 1.02': prabhandham/tiruppavai/1-02-vaiyattu-vazvirgal-namum.md
-        - 'Verse 1.03': prabhandham/tiruppavai/1-03-ongi-ulagalanda-uttaman-per.md
-        - 'Verse 1.04': prabhandham/tiruppavai/1-04-azi-mazaikkanna-onru.md
-        - 'Verse 1.05': prabhandham/tiruppavai/1-05-mayanai-mannu-vadamadurai-maindanai.md
-        - 'Verse 1.06': prabhandham/tiruppavai/1-06-pullum-silambina-kan-pullaraiyan.md
-        - 'Verse 1.07': prabhandham/tiruppavai/1-07-kisu-kisenrengum-anaiccattan.md
-        - 'Verse 1.08': prabhandham/tiruppavai/1-08-kizvanam-vellenrerumai-siru-vidu.md
-        - 'Verse 1.09': prabhandham/tiruppavai/1-09-tumani-madattu-ccutrum-vilakkeriya.md
-        - 'Verse 1.10': prabhandham/tiruppavai/1-10-notru-ccuvarkkam-puguginra-ammanay.md
-        - 'Verse 1.11': prabhandham/tiruppavai/1-11-katru-kkaravai-kkanangal-pala.md
-        - 'Verse 1.12': prabhandham/tiruppavai/1-12-kanaittilam-katrerumai-kanrukkirangi.md
-        - 'Verse 1.13': prabhandham/tiruppavai/1-13-pullin-vay-kindanai-ppolla.md
-        - 'Verse 1.14': prabhandham/tiruppavai/1-14-ungal-puzaikkadai-ttottattu-vaviyul.md
-        - 'Verse 1.15': prabhandham/tiruppavai/1-15-elle-ilam-kiliye.md
-        - 'Verse 1.16': prabhandham/tiruppavai/1-16-nayaganay-ninra-nandagobanudaiya-koyil.md
-        - 'Verse 1.17': prabhandham/tiruppavai/1-17-ambarame-tannire-sore-aram.md
-        - 'Verse 1.18': prabhandham/tiruppavai/1-18-undu-mada-kalitran-odada.md
-        - 'Verse 1.19': prabhandham/tiruppavai/1-19-kuttu-vilakkeriya-kottukkal-kattil.md
-        - 'Verse 1.20': prabhandham/tiruppavai/1-20-muppattu-muvar-amararkku-mun.md
-        - 'Verse 1.21': prabhandham/tiruppavai/1-21-etra-kalangal-edir-pongi.md
-        - 'Verse 1.22': prabhandham/tiruppavai/1-22-angan-ma-nalattarasar.md
-        - 'Verse 1.23': prabhandham/tiruppavai/1-23-mari-malai-muzainjil-manni.md
-        - 'Verse 1.24': prabhandham/tiruppavai/1-24-anrivvulagam-alanday-adi-potri.md
-        - 'Verse 1.25': prabhandham/tiruppavai/1-25-orutti-maganay-ppirandu.md
-        - 'Verse 1.26': prabhandham/tiruppavai/1-26-male-manivanna.md
-        - 'Verse 1.27': prabhandham/tiruppavai/1-27-kudarai-vellum-sir-kovinda.md
-        - 'Verse 1.28': prabhandham/tiruppavai/1-28-karavaigal-pin-senru-kananjerndunbom.md
-        - 'Verse 1.29': prabhandham/tiruppavai/1-29-sitram-sirugale-vandunnai-ccevittu.md
-        - 'Verse 1.30': prabhandham/tiruppavai/1-30-vanga-kkadal-kadainda-madavanai.md
+        - 'Verse 1.01 · margazi-ttingal': prabhandham/tiruppavai/1-01-margazi-ttingal-madi-nirainda.md
+        - 'Verse 1.02 · vaiyattu-vazvir': prabhandham/tiruppavai/1-02-vaiyattu-vazvirgal-namum.md
+        - 'Verse 1.03 · ongi-ulagalanda': prabhandham/tiruppavai/1-03-ongi-ulagalanda-uttaman-per.md
+        - 'Verse 1.04 · azi-mazaikkanna': prabhandham/tiruppavai/1-04-azi-mazaikkanna-onru.md
+        - 'Verse 1.05 · mayanai-mannu-v': prabhandham/tiruppavai/1-05-mayanai-mannu-vadamadurai-maindanai.md
+        - 'Verse 1.06 · pullum-silambin': prabhandham/tiruppavai/1-06-pullum-silambina-kan-pullaraiyan.md
+        - 'Verse 1.07 · kisu-kisenrengu': prabhandham/tiruppavai/1-07-kisu-kisenrengum-anaiccattan.md
+        - 'Verse 1.08 · kizvanam-vellen': prabhandham/tiruppavai/1-08-kizvanam-vellenrerumai-siru-vidu.md
+        - 'Verse 1.09 · tumani-madattu-': prabhandham/tiruppavai/1-09-tumani-madattu-ccutrum-vilakkeriya.md
+        - 'Verse 1.10 · notru-ccuvarkka': prabhandham/tiruppavai/1-10-notru-ccuvarkkam-puguginra-ammanay.md
+        - 'Verse 1.11 · katru-kkaravai-': prabhandham/tiruppavai/1-11-katru-kkaravai-kkanangal-pala.md
+        - 'Verse 1.12 · kanaittilam-kat': prabhandham/tiruppavai/1-12-kanaittilam-katrerumai-kanrukkirangi.md
+        - 'Verse 1.13 · pullin-vay-kind': prabhandham/tiruppavai/1-13-pullin-vay-kindanai-ppolla.md
+        - 'Verse 1.14 · ungal-puzaikkad': prabhandham/tiruppavai/1-14-ungal-puzaikkadai-ttottattu-vaviyul.md
+        - 'Verse 1.15 · elle-ilam-kiliy': prabhandham/tiruppavai/1-15-elle-ilam-kiliye.md
+        - 'Verse 1.16 · nayaganay-ninra': prabhandham/tiruppavai/1-16-nayaganay-ninra-nandagobanudaiya-koyil.md
+        - 'Verse 1.17 · ambarame-tannir': prabhandham/tiruppavai/1-17-ambarame-tannire-sore-aram.md
+        - 'Verse 1.18 · undu-mada-kalit': prabhandham/tiruppavai/1-18-undu-mada-kalitran-odada.md
+        - 'Verse 1.19 · kuttu-vilakkeri': prabhandham/tiruppavai/1-19-kuttu-vilakkeriya-kottukkal-kattil.md
+        - 'Verse 1.20 · muppattu-muvar-': prabhandham/tiruppavai/1-20-muppattu-muvar-amararkku-mun.md
+        - 'Verse 1.21 · etra-kalangal-e': prabhandham/tiruppavai/1-21-etra-kalangal-edir-pongi.md
+        - 'Verse 1.22 · angan-ma-nalatt': prabhandham/tiruppavai/1-22-angan-ma-nalattarasar.md
+        - 'Verse 1.23 · mari-malai-muza': prabhandham/tiruppavai/1-23-mari-malai-muzainjil-manni.md
+        - 'Verse 1.24 · anrivvulagam-al': prabhandham/tiruppavai/1-24-anrivvulagam-alanday-adi-potri.md
+        - 'Verse 1.25 · orutti-maganay-': prabhandham/tiruppavai/1-25-orutti-maganay-ppirandu.md
+        - 'Verse 1.26 · male-manivanna': prabhandham/tiruppavai/1-26-male-manivanna.md
+        - 'Verse 1.27 · kudarai-vellum-': prabhandham/tiruppavai/1-27-kudarai-vellum-sir-kovinda.md
+        - 'Verse 1.28 · karavaigal-pin-': prabhandham/tiruppavai/1-28-karavaigal-pin-senru-kananjerndunbom.md
+        - 'Verse 1.29 · sitram-sirugale': prabhandham/tiruppavai/1-29-sitram-sirugale-vandunnai-ccevittu.md
+        - 'Verse 1.30 · vanga-kkadal-ka': prabhandham/tiruppavai/1-30-vanga-kkadal-kadainda-madavanai.md
     - 'Thirupallāṇḍu':
         - 'Overview': prabhandham/thirupallandu/index.md
-        - 'Verse 1.01': prabhandham/thirupallandu/1-01-pallandu-pallandu-pallayirattandu.md
-        - 'Verse 1.02': prabhandham/thirupallandu/1-02-adiyomodum-ninnodum.md
-        - 'Verse 1.03': prabhandham/thirupallandu/1-03-vazat-pattu-ninrir-ullirel.md
-        - 'Verse 1.04': prabhandham/thirupallandu/1-04-edu-nilattil-iduvadan-munnam.md
-        - 'Verse 1.05': prabhandham/thirupallandu/1-05-andakkulattukkadibadi-agi.md
-        - 'Verse 1.06': prabhandham/thirupallandu/1-06-endai-tandai-tandai-tandai.md
-        - 'Verse 1.07': prabhandham/thirupallandu/1-07-tiyir-poliginra-senjudar-azi.md
-        - 'Verse 1.08': prabhandham/thirupallandu/1-08-neyyidai-nallador-sorum.md
-        - 'Verse 1.09': prabhandham/thirupallandu/1-09-uduttu-kkalainda-nin-pidagavadai.md
-        - 'Verse 1.10': prabhandham/thirupallandu/1-10-ennal-emberuman.md
-        - 'Verse 1.11': prabhandham/thirupallandu/1-11-alvazakkonrum-illa.md
-        - 'Verse 1.12': prabhandham/thirupallandu/1-12-pallandenru-pavittiranai.md
+        - 'Verse 1.01 · pallandu-pallan': prabhandham/thirupallandu/1-01-pallandu-pallandu-pallayirattandu.md
+        - 'Verse 1.02 · adiyomodum-ninn': prabhandham/thirupallandu/1-02-adiyomodum-ninnodum.md
+        - 'Verse 1.03 · vazat-pattu-nin': prabhandham/thirupallandu/1-03-vazat-pattu-ninrir-ullirel.md
+        - 'Verse 1.04 · edu-nilattil-id': prabhandham/thirupallandu/1-04-edu-nilattil-iduvadan-munnam.md
+        - 'Verse 1.05 · andakkulattukka': prabhandham/thirupallandu/1-05-andakkulattukkadibadi-agi.md
+        - 'Verse 1.06 · endai-tandai-ta': prabhandham/thirupallandu/1-06-endai-tandai-tandai-tandai.md
+        - 'Verse 1.07 · tiyir-poliginra': prabhandham/thirupallandu/1-07-tiyir-poliginra-senjudar-azi.md
+        - 'Verse 1.08 · neyyidai-nallad': prabhandham/thirupallandu/1-08-neyyidai-nallador-sorum.md
+        - 'Verse 1.09 · uduttu-kkalaind': prabhandham/thirupallandu/1-09-uduttu-kkalainda-nin-pidagavadai.md
+        - 'Verse 1.10 · ennal-emberuman': prabhandham/thirupallandu/1-10-ennal-emberuman.md
+        - 'Verse 1.11 · alvazakkonrum-i': prabhandham/thirupallandu/1-11-alvazakkonrum-illa.md
+        - 'Verse 1.12 · pallandenru-pav': prabhandham/thirupallandu/1-12-pallandenru-pavittiranai.md
     - 'Kaṇṇinuṇciṟuttāmpu':
         - 'Overview': prabhandham/kanninunciruttampu/index.md
-        - 'Verse 1.01': prabhandham/kanninunciruttampu/1-01-kanni-nun-siru-ttambinal.md
-        - 'Verse 1.02': prabhandham/kanninunciruttampu/1-02-navinal-navitru.md
-        - 'Verse 1.03': prabhandham/kanninunciruttampu/1-03-tiri-tandagilum.md
-        - 'Verse 1.04': prabhandham/kanninunciruttampu/1-04-nanmaiyal-mikka.md
-        - 'Verse 1.05': prabhandham/kanninunciruttampu/1-05-nambinen.md
-        - 'Verse 1.06': prabhandham/kanninunciruttampu/1-06-inru-tottum.md
-        - 'Verse 1.07': prabhandham/kanninunciruttampu/1-07-kandu-kondennai.md
-        - 'Verse 1.08': prabhandham/kanninunciruttampu/1-08-arul-kondadum.md
-        - 'Verse 1.09': prabhandham/kanninunciruttampu/1-09-mikka-vediyar.md
-        - 'Verse 1.10.': prabhandham/kanninunciruttampu/1-10--payan-anragilum.md
-        - 'Verse 1.11': prabhandham/kanninunciruttampu/1-11-anban-tannai.md
+        - 'Verse 1.01 · kanni-nun-siru-': prabhandham/kanninunciruttampu/1-01-kanni-nun-siru-ttambinal.md
+        - 'Verse 1.02 · navinal-navitru': prabhandham/kanninunciruttampu/1-02-navinal-navitru.md
+        - 'Verse 1.03 · tiri-tandagilum': prabhandham/kanninunciruttampu/1-03-tiri-tandagilum.md
+        - 'Verse 1.04 · nanmaiyal-mikka': prabhandham/kanninunciruttampu/1-04-nanmaiyal-mikka.md
+        - 'Verse 1.05 · nambinen': prabhandham/kanninunciruttampu/1-05-nambinen.md
+        - 'Verse 1.06 · inru-tottum': prabhandham/kanninunciruttampu/1-06-inru-tottum.md
+        - 'Verse 1.07 · kandu-kondennai': prabhandham/kanninunciruttampu/1-07-kandu-kondennai.md
+        - 'Verse 1.08 · arul-kondadum': prabhandham/kanninunciruttampu/1-08-arul-kondadum.md
+        - 'Verse 1.09 · mikka-vediyar': prabhandham/kanninunciruttampu/1-09-mikka-vediyar.md
+        - 'Verse 1.10. · payan-anragilum': prabhandham/kanninunciruttampu/1-10--payan-anragilum.md
+        - 'Verse 1.11 · anban-tannai': prabhandham/kanninunciruttampu/1-11-anban-tannai.md
   - 'Divya Deśams':
     - 'Overview': divya-desham/index.md
     - 'Śrī Raṅganātha': divya-desham/sri-ranganatha.md
@@ -347,6 +334,20 @@ nav:
     - 'Mūrti Perumāḷ': divya-desham/murti-perumal.md
     - 'Vyūha Vāsudeva': divya-desham/vyuha-vasudeva.md
     - 'Para Vāsudeva': divya-desham/para-vasudeva.md
+  - 'Āḻvārs':
+    - 'Overview': azhwars/index.md
+    - 'Poygai Āḻvār': azhwars/poygai-alvar.md
+    - 'Bhūtat Āḻvār': azhwars/bhutat-alvar.md
+    - 'Pey Āḻvār': azhwars/pey-alvar.md
+    - 'Tirumalisai Āḻvār': azhwars/tirumalisai-alvar.md
+    - 'Nammāḻvār': azhwars/nammalvar.md
+    - 'Madhurakavi Āḻvār': azhwars/madhurakavi-alvar.md
+    - 'Kulasekara Āḻvār': azhwars/kulasekara-alvar.md
+    - 'Periyāḻvār': azhwars/periyalvar.md
+    - 'Āṇḍāḻ': azhwars/andal.md
+    - 'Toṇḍaraḍippoḍi Āḻvār': azhwars/tondaradippodi-alvar.md
+    - 'Tiruppāṇ Āḻvār': azhwars/tiruppan-alvar.md
+    - 'Tirumaṅgai Āḻvār': azhwars/tirumangai-alvar.md
   - 'Ācāryas':
     - 'Overview': acharyas/index.md
     - 'Nāthamuni': acharyas/nathamuni.md
@@ -370,3 +371,5 @@ nav:
     - 'Vedānta Deśika': acharyas/vedanta-desika.md
     - 'Maṇavāḷa Māmuṉigaḷ': acharyas/manavala-mamunigal.md
     - 'Ādivaṇ Śaṭakōpa Jeer': acharyas/adivan-satakopa-jeer.md
+  - 'About': index.md
+  - 'Contributing': contributing.md

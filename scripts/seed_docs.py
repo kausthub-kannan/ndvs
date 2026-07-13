@@ -16,6 +16,7 @@ Seeded sections (never edit manually — regenerated on every run):
 """
 
 import csv
+import html
 import os
 import re
 import shutil
@@ -86,6 +87,89 @@ def prose_paragraphs(text: str) -> str:
     return text
 
 
+def render_tags(meta_rows: list[tuple[str, str]]) -> str:
+    """Render attribute key-value pairs as styled HTML pill tags.
+
+    Comma-separated values are split into individual value chips
+    within the same pill so long lists don't overflow.
+    """
+    if not meta_rows:
+        return ""
+    pills = []
+    for k, v in meta_rows:
+        values = [val.strip() for val in v.split(",") if val.strip()]
+        val_spans = "".join(f'<span class="ndvs-tag__val">{val}</span>' for val in values)
+        pills.append(
+            f'<span class="ndvs-tag">'
+            f'<span class="ndvs-tag__key">{k}</span>'
+            f'{val_spans}'
+            f'</span>'
+        )
+    return f'<div class="ndvs-tags">\n{"" .join(pills)}\n</div>'
+
+
+def render_verse_blocks(text: str) -> str:
+    """Convert <verse>...</verse> wrappers to centered italic HTML divs.
+
+    The CSV sometimes stores angle brackets as HTML entities (&lt;verse&gt;),
+    so we unescape first.  Inside a verse block, line breaks are encoded as:
+      - " |\\" or " |" followed by a newline  → rendered as <br>
+      - bare newlines                          → rendered as <br>
+    Trailing backslashes from CSV multi-line encoding are stripped.
+
+    The surrounding blank lines make Python-Markdown treat the <div>
+    as a block element rather than wrapping it in a <p> tag.
+    """
+    # Normalise HTML-escaped tags produced by some CSV editors
+    text = html.unescape(text)
+
+    def _replace(m: re.Match) -> str:
+        inner = m.group(1).strip()
+
+        # 1. Normalise CSV line-break encoding: " |\\\n", " |\n", or just "\n"
+        inner = re.sub(r"\s*\|\\\s*\n\s*", "<br>", inner)   # |\ + newline
+        inner = re.sub(r"\s*\|\s*\n\s*", "<br>", inner)      # | + newline
+        inner = inner.replace("\n", "<br>")                   # bare newlines
+
+        # 2. Single | mid-line (verse foot separator) → <br>
+        #    Protect || (double pipe = full stop marker) — don't replace those
+        inner = re.sub(r"(?<!\|)\s*\|\s*(?!\|)", "<br>", inner)
+
+        # 3. Strip trailing backslashes left from CSV encoding
+        inner = inner.replace("\\", "")
+
+        # 4. Clean up any doubled <br>
+        inner = re.sub(r"(<br>)+", "<br>", inner)
+        inner = inner.strip("<br>").strip()
+
+        return f'\n\n<div class="ndvs-verse">\n<em>{inner}</em>\n</div>\n\n'
+
+    return re.sub(r"<verse>(.*?)</verse>", _replace, text, flags=re.DOTALL)
+
+
+def render_verse_text(text: str) -> str:
+    """Wrap multi-line verse text (Tamil/transliteration) in a centered italic div."""
+    lines = text.strip().splitlines()
+    inner = "<br>".join(line.rstrip("\\").strip() for line in lines)
+    return f'<div class="ndvs-verse">\n<em>{inner}</em>\n</div>'
+
+
+def render_script_toggle(tamil: str, english: str) -> str:
+    """Return an HTML toggle widget that switches between Tamil and Transliteration."""
+    tamil_div = render_verse_text(tamil)
+    english_div = render_verse_text(english)
+    return (
+        '<div class="ndvs-script-toggle">\n'
+        '<div class="ndvs-script-tabs">\n'
+        '<button class="ndvs-script-tab ndvs-script-tab--active" data-target="tamil">Tamil</button>\n'
+        '<button class="ndvs-script-tab" data-target="translit">Transliteration</button>\n'
+        '</div>\n'
+        f'<div class="ndvs-script-panel" data-panel="tamil">\n{tamil_div}\n</div>\n'
+        f'<div class="ndvs-script-panel ndvs-hidden" data-panel="translit">\n{english_div}\n</div>\n'
+        '</div>'
+    )
+
+
 def write(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8")
@@ -112,14 +196,14 @@ def render_pasuram(row: dict) -> str:
     tamil = fix_newlines(row.get("tamil_scripts", ""))
     english = fix_newlines(row.get("english_scripts", ""))
     meaning = row.get("meaning", "").strip()
-    purport = prose_paragraphs(row.get("purport", ""))
+    purport = render_verse_blocks(prose_paragraphs(row.get("purport", "")))
     azhwar = row.get("azhwar", "").strip()
     prabhandham = row.get("prabhandham", "").strip()
     archavathara = row.get("archavathara", "").strip()
     avataram = row.get("avataram", "").strip()
     rasa = row.get("rasa", "").strip()
 
-    # Build metadata table
+    # Build metadata tags
     meta_rows = [("Prabhandham", prabhandham), ("Āḻvār", azhwar)]
     if archavathara:
         meta_rows.append(("Archāvatāra", archavathara))
@@ -128,39 +212,30 @@ def render_pasuram(row: dict) -> str:
     if rasa:
         meta_rows.append(("Rasa", rasa))
 
-    meta_table = "| Attribute | Value |\n|---|---|\n"
-    meta_table += "".join(f"| {k} | {v} |\n" for k, v in meta_rows)
+    tags_block = render_tags(meta_rows)
+
+    script_toggle = render_script_toggle(tamil, english)
 
     lines = [
         f"# Verse {si}",
         "",
-        meta_table,
+        tags_block,
         "",
         "---",
         "",
-        '## 📜 Tamil',
+        "## Script",
         "",
-        "```",
-        tamil,
-        "```",
+        script_toggle,
         "",
         "---",
         "",
-        "## 🔤 Transliteration",
-        "",
-        "```",
-        english,
-        "```",
-        "",
-        "---",
-        "",
-        "## 💡 Meaning",
+        "## Meaning",
         "",
         f"> {meaning}",
         "",
         "---",
         "",
-        "## 📖 Purport",
+        "## Purport",
         "",
         purport,
         "",
@@ -171,7 +246,7 @@ def render_pasuram(row: dict) -> str:
 def render_azhwar(row: dict) -> str:
     name = row.get("name", "").strip()
     incarnation = row.get("incarnation", "").strip()
-    bio = prose_paragraphs(row.get("bio", ""))
+    bio = render_verse_blocks(prose_paragraphs(row.get("bio", "")))
     time_period = row.get("time_period", "").strip()
     birthplace = row.get("birthplace", "").strip()
     taniyan_tamil = fix_newlines(row.get("taniyan_tamil", ""))
@@ -185,14 +260,10 @@ def render_azhwar(row: dict) -> str:
     if birthplace:
         meta_rows.append(("Birthplace", birthplace))
 
-    meta_table = ""
-    if meta_rows:
-        meta_table = "| Attribute | Value |\n|---|---|\n"
-        meta_table += "".join(f"| {k} | {v} |\n" for k, v in meta_rows)
-
     lines = [f"# {name}", ""]
-    if meta_table:
-        lines += [meta_table, ""]
+    tags = render_tags(meta_rows)
+    if tags:
+        lines += [tags, ""]
 
     if bio:
         lines += ["## Biography", "", bio, ""]
@@ -200,16 +271,16 @@ def render_azhwar(row: dict) -> str:
     if taniyan_tamil or taniyan_english:
         lines += ["---", "", "## Taniyan", ""]
         if taniyan_tamil:
-            lines += ["### Tamil", "", "```", taniyan_tamil, "```", ""]
+            lines += ["### Tamil", "", render_verse_text(taniyan_tamil), ""]
         if taniyan_english:
-            lines += ["### English", "", f"*{taniyan_english}*", ""]
+            lines += ["### English", "", render_verse_text(taniyan_english), ""]
 
     return "\n".join(lines)
 
 
 def render_acharya(row: dict) -> str:
     name = row.get("name", "").strip()
-    bio = prose_paragraphs(row.get("bio", ""))
+    bio = render_verse_blocks(prose_paragraphs(row.get("bio", "")))
     time_period = row.get("time_period", "").strip()
     birthplace = row.get("birthplace", "").strip()
 
@@ -219,14 +290,10 @@ def render_acharya(row: dict) -> str:
     if birthplace:
         meta_rows.append(("Birthplace", birthplace))
 
-    meta_table = ""
-    if meta_rows:
-        meta_table = "| Attribute | Value |\n|---|---|\n"
-        meta_table += "".join(f"| {k} | {v} |\n" for k, v in meta_rows)
-
     lines = [f"# {name}", ""]
-    if meta_table:
-        lines += [meta_table, ""]
+    tags = render_tags(meta_rows)
+    if tags:
+        lines += [tags, ""]
     if bio:
         lines += ["## Biography", "", bio, ""]
 
@@ -237,7 +304,7 @@ def render_divya_desham(row: dict) -> str:
     name = row.get("name", "").strip()
     place = row.get("place", "").strip()
     state = row.get("state", "").strip()
-    info = prose_paragraphs(row.get("info", ""))
+    info = render_verse_blocks(prose_paragraphs(row.get("info", "")))
     coords = row.get("coordinates", "").strip()
 
     meta_rows = []
@@ -248,14 +315,10 @@ def render_divya_desham(row: dict) -> str:
     if coords:
         meta_rows.append(("Coordinates", coords))
 
-    meta_table = ""
-    if meta_rows:
-        meta_table = "| Attribute | Value |\n|---|---|\n"
-        meta_table += "".join(f"| {k} | {v} |\n" for k, v in meta_rows)
-
     lines = [f"# {name}", ""]
-    if meta_table:
-        lines += [meta_table, ""]
+    tags = render_tags(meta_rows)
+    if tags:
+        lines += [tags, ""]
     if info:
         lines += ["## About", "", info, ""]
 
@@ -469,7 +532,7 @@ def copy_static_pages() -> None:
 # ---------------------------------------------------------------------------
 
 MKDOCS_TEMPLATE = """\
-site_name: Nalāyira Divya Prabandham
+site_name: Namāmyaham Drāviḍa Veda Sāgaram (NDVS)
 site_description: >-
   A digital book of the Nalāyira Divya Prabandham — 4000 sacred Tamil verses
   composed by the Āḻvārs, with Tamil scripts, transliteration, meaning, and purport.
@@ -484,7 +547,8 @@ site_dir: site
 
 theme:
   name: material
-  favicon: assets/favicon.png
+  favicon: assets/android-icon-foreground.png
+  logo: assets/android-icon-foreground.png
   palette:
     scheme: slate
     primary: custom
@@ -492,7 +556,6 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
     - navigation.collapse
     - navigation.top
     - navigation.indexes
@@ -506,6 +569,9 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - assets/scripts/ndvs.js
 
 markdown_extensions:
   - admonition
@@ -556,12 +622,12 @@ def build_nav_yaml(
         return ""
 
     sections = [
-        ("Home", "index.md"),
-        ("Contributing", "contributing.md"),
-        ("Āḻvārs", azhwar_nav),
         ("Prabhandhams", prabhandham_nav),
         ("Divya Deśams", desham_nav),
+        ("Āḻvārs", azhwar_nav),
         ("Ācāryas", acharya_nav),
+        ("About", "index.md"),
+        ("Contributing", "contributing.md"),
     ]
 
     lines = ["nav:\n"]
