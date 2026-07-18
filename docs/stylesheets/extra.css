@@ -69,6 +69,13 @@ body {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
+/* ── Mobile hamburger / menu icon ────────────────────────────────────────────*/
+@media screen and (max-width: 76.1875em) {
+  .md-header__button:not(.md-logo) {
+    color: #E8904B !important;
+  }
+}
+
 .md-header__title {
   color: #E8904B !important;
   font-weight: 700;
@@ -407,13 +414,9 @@ body {
   font-size: 0.78rem;
 }
 
-/* ── Back-to-top ─────────────────────────────────────────────────────────────*/
+/* ── Back-to-top (hidden) ────────────────────────────────────────────────────*/
 .md-top {
-  background-color: #E8904B !important;
-  color: #1A1A1A !important;
-  border-radius: 50%;
-  font-size: 0.75rem;
-  box-shadow: 0 2px 8px rgba(232, 144, 75, 0.35);
+  display: none !important;
 }
 
 /* ── TOC (right sidebar) ──────────────────────────────────────────────────────*/
