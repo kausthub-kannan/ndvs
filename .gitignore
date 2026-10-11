@@ -17,9 +17,6 @@ docs/prabhandham/
 docs/index.md
 docs/contributing.md
 
-# Data and tabular files
-data/
-
 # Dependencies
 node_modules/
 
@@ -64,5 +61,7 @@ yarn-error.*
 
 # TypeScript
 *.tsbuildinfo
+
+.obsidian
 
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
