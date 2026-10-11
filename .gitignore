@@ -4,10 +4,10 @@ __pycache__/
 *.pyc
 *.pyo
 
-# MkDocs generated output — never commit
+# MkDocs generated output: never commit
 site/
 
-# Seeded docs (regenerated on every release — never manually edit)
+# Seeded docs (regenerated on every release: never manually edit)
 docs/azhwars/
 docs/acharyas/
 docs/divya-desham/
@@ -17,55 +17,53 @@ docs/prabhandham/
 docs/index.md
 docs/contributing.md
 
-# Expo / React Native app (app/) — merged from app/.gitignore
-# Paths are root-anchored with app/ prefix
-app/node_modules/
+# Data and tabular files
+data/
+*.csv
 
-app/data/
+# Dependencies
+node_modules/
 
-app/.expo/
-app/dist/
-app/web-build/
-app/expo-env.d.ts
-
-# Native
-app/.kotlin/
-app/**/*.orig.*
-app/**/*.jks
-app/**/*.p8
-app/**/*.p12
-app/**/*.key
-app/**/*.mobileprovision
-
-# Metro
-app/**/.metro-health-check*
-
-# debug
-app/**/npm-debug.*
-app/**/yarn-debug.*
-app/**/yarn-error.*
-
-# macOS
-.DS_Store
-app/**/*.pem
-
-app/node_modules
-
-# local env files
-app/**/.env*.local
-
-# typescript
-app/**/*.tsbuildinfo
-
-app/app-example
-
-# generated native folders
-app/ios/
-app/android/
-
-# IDE / assistants (global — covers app/ too)
+# IDE / assistants
 .vscode/
 .claude/
 
-data/markdowns/NDVS/.obsidian
-*.csv
+# Expo / React Native
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+app-example
+
+# Generated native folders
+app/ios/
+app/android/
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# Debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# Local env files
+.env*.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
