@@ -56,7 +56,7 @@ More than technical expertise, we seek sincere volunteers who are willing to lea
 
 ## Contributing to the Prabandha Malai App
 
-The **Prabandha Malai** app lives in [`app/`](app/) and is the cross-platform (iOS / Android / Web) client for exploring pāsurams, Divya Deśams, Āḻvārs, and Ācāryas. It is built with React Native + Expo (SDK 54), Expo Router, NativeWind (Tailwind CSS), Expo SQLite, and TypeScript. For the full feature list and app docs, see [`app/README.md`](app/README.md). By participating, please uphold a welcoming, inclusive, and respectful environment.
+The **Prabandha Malai** app lives in `app/` and is the cross-platform (iOS / Android / Web) client for exploring pāsurams, Divya Deśams, Āḻvārs, and Ācāryas. It is built with React Native + Expo (SDK 54), Expo Router, NativeWind (Tailwind CSS), Expo SQLite, and TypeScript. For the full feature list and app docs, see `app/README.md`. By participating, please uphold a welcoming, inclusive, and respectful environment.
 
 ### Local setup
 

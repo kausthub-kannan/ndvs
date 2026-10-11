@@ -1,32 +1,34 @@
-name: Create data
+name: Create Data
 
+# Runs ONLY on version tags (e.g. v0.6.1). This is always the FIRST workflow
+# in the release pipeline: it regenerates data/*.csv from data/markdowns/**,
+# seeds the docs, strictly validates the MkDocs build, and uploads the built
+# site as an artifact. Deploy (deploy.yml) is triggered by THIS workflow's
+# completion via `workflow_run`, so ordering is guaranteed by construction.
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    tags:
+      - "v*"
   workflow_dispatch:
 
 permissions:
-  contents: write # needed to commit regenerated CSVs back
+  contents: read # tag checkout only; nothing is pushed back
 
 concurrency:
   group: create-data-${{ github.ref }}
-  cancel-in-progress: false # never cancel: CSVs must stay in sync with markdowns
+  cancel-in-progress: false # a release build must never be half-cancelled
 
 jobs:
-  convert:
-    name: Markdown → CSV
+  prepare:
+    name: Markdown → CSV → Docs → Site
     runs-on: ubuntu-latest
 
     steps:
-      # ── 1. Checkout (full ref so we can push regenerated CSVs back) ──────
+      # ── 1. Checkout the pushed tag (full history for a clean build) ──────
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref || github.ref_name }}
+          fetch-depth: 0
 
       # ── 2. Set up Python ─────────────────────────────────────────────────
       - name: Set up Python 3.11
@@ -35,30 +37,33 @@ jobs:
           python-version: "3.11"
           cache: pip
 
-      # ── 3. Install converter dependency (PyYAML; script falls back ───────
-      #      to a tiny parser without it, but PyYAML keeps scalars exact)
-      - name: Install converter dependencies
-        run: pip install --upgrade pip pyyaml
+      # ── 3. Install MkDocs + converter dependencies ───────────────────────
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install \
+            mkdocs>=1.6.0 \
+            mkdocs-material>=9.5.0 \
+            pymdown-extensions>=10.7 \
+            pyyaml
 
-      # ── 4. Run the converter FIRST, before anything else consumes data/ ──
+      # ── 4. Regenerate CSVs from markdowns FIRST ──────────────────────────
+      #      data/*.csv are build artifacts, not committed: everything below
+      #      consumes them, so the converter must run before anything else.
       - name: Regenerate CSVs from markdowns
         run: python data/convert.py
 
-      # ── 5a. On PRs: fail if the contributor forgot to regenerate CSVs ────
-      - name: Check CSVs are up to date (PR only)
-        if: github.event_name == 'pull_request'
-        run: |
-          git diff --exit-code -- data/*.csv || {
-            echo "::error::data/*.csv is out of date. Run 'python data/convert.py' locally and commit the result."
-            exit 1
-          }
+      # ── 5. Seed all pages from CSVs ──────────────────────────────────────
+      - name: Seed docs from CSV data
+        run: python scripts/seed_docs.py
 
-      # ── 5b. On push to main (incl. PR merges): commit CSVs back ───────────
-      - name: Commit regenerated CSVs
-        if: github.event_name != 'pull_request'
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/*.csv
-          git diff --cached --quiet || git commit -m "chore(data): regenerate CSVs from markdowns [skip ci]"
-          git push
+      # ── 6. Validate the build (strict mode catches broken links / nav) ───
+      - name: Validate MkDocs build
+        run: mkdocs build --strict --site-dir /tmp/ndvs-site
+
+      # ── 7. Hand the validated site to the Deploy workflow ────────────────
+      - name: Upload built site
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: /tmp/ndvs-site

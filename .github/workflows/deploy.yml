@@ -1,52 +1,44 @@
 name: Build & Deploy to GitHub Pages
 
+# Runs ONLY after the "Create Data" workflow completes successfully.
+# Do NOT add a push/pull_request trigger here: ordering (Create Data first,
+# Deploy second) is guaranteed by this `workflow_run` chain. To cut a
+# release, just push a version tag (e.g. `git push origin v0.6.1`).
 on:
-  push:
-    tags:
-      - "v*"
+  workflow_run:
+    workflows: ["Create Data"]
+    types:
+      - completed
 
 permissions:
-  contents: write   # needed for gh-deploy to push to gh-pages branch
+  contents: write # needed to publish to the gh-pages branch
+  actions: read  # needed to download the site artifact from the Create Data run
+
+concurrency:
+  group: gh-pages-deploy
+  cancel-in-progress: false # deployments must not interleave on gh-pages
 
 jobs:
-  build-and-deploy:
-    name: Seed Docs → MkDocs → GitHub Pages
+  deploy:
+    name: Publish Site → gh-pages
     runs-on: ubuntu-latest
+    # Only deploy validated release builds; skip hand-cancelled/failed ones.
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
-      # ── 1. Checkout full history (mkdocs gh-deploy needs git history) ─────
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      # ── 1. Fetch the validated site built by the Create Data run ─────────
+      - name: Download built site
+        uses: actions/download-artifact@v4
         with:
-          fetch-depth: 0
+          name: site
+          path: site
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
 
-      # ── 2. Set up Python ──────────────────────────────────────────────────
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: pip
-
-      # ── 3. Install MkDocs + Material theme ───────────────────────────────
-      - name: Install MkDocs dependencies
-        run: |
-          pip install --upgrade pip
-          pip install \
-            mkdocs>=1.6.0 \
-            mkdocs-material>=9.5.0 \
-            pymdown-extensions>=10.7
-
-      # ── 4. Seed all pages from CSVs ───────────────────────────────────────
-      - name: Seed docs from CSV data
-        run: python scripts/seed_docs.py
-
-      # ── 5. Validate the build (strict mode catches broken links / nav) ────
-      - name: Validate MkDocs build
-        run: mkdocs build --strict --site-dir /tmp/ndvs-site
-
-      # ── 6. Deploy to GitHub Pages (gh-pages branch) ───────────────────────
+      # ── 2. Publish to GitHub Pages (gh-pages branch) ─────────────────────
       - name: Deploy to GitHub Pages
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          mkdocs gh-deploy --force --clean --message "deploy: release ${{ github.ref_name }}"
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          commit_message: "deploy: release ${{ github.event.workflow_run.head_branch }}"

@@ -344,7 +344,7 @@ def render_azhwars_index(rows: list[dict]) -> str:
         name = r["name"].strip()
         bp = r.get("birthplace", "").strip()
         tp = r.get("time_period", "").strip()
-        lines.append(f"| {r['id']} | [{name}]({slug}.md) | {bp} | {tp} |")
+        lines.append(f"| {r.get('id', r.get('uid', ''))} | [{name}]({slug}.md) | {bp} | {tp} |")
     return "\n".join(lines)
 
 
@@ -363,7 +363,7 @@ def render_acharyas_index(rows: list[dict]) -> str:
         name = r["name"].strip()
         bp = r.get("birthplace", "").strip()
         tp = r.get("time_period", "").strip()
-        lines.append(f"| {r['id']} | [{name}]({slug}.md) | {bp} | {tp} |")
+        lines.append(f"| {r.get('id', r.get('uid', ''))} | [{name}]({slug}.md) | {bp} | {tp} |")
     return "\n".join(lines)
 
 
@@ -381,7 +381,7 @@ def render_divya_desham_index(rows: list[dict]) -> str:
         name = r["name"].strip()
         place = r.get("place", "").strip()
         state = r.get("state", "").strip()
-        lines.append(f"| {r['id']} | [{name}]({slug}.md) | {place} | {state} |")
+        lines.append(f"| {r.get('id', r.get('uid', ''))} | [{name}]({slug}.md) | {place} | {state} |")
     return "\n".join(lines)
 
 
