@@ -52,6 +52,58 @@ More than technical expertise, we seek sincere volunteers who are willing to lea
 
 ---
 
+## Contributing to the Prabandha Malai App
+
+The **Prabandha Malai** app lives in [`app/`](app/) and is the cross-platform (iOS / Android / Web) client for exploring pāsurams, Divya Deśams, Āḻvārs, and Ācāryas. It is built with React Native + Expo (SDK 54), Expo Router, NativeWind (Tailwind CSS), Expo SQLite, and TypeScript. For the full feature list and app docs, see [`app/README.md`](app/README.md). By participating, please uphold a welcoming, inclusive, and respectful environment.
+
+### Local setup
+
+Prerequisites: Node.js v18+, npm (or yarn/pnpm), Expo CLI, and an iOS Simulator (Mac) or Android Emulator for mobile testing. All app commands run from `app/`:
+
+```bash
+git clone https://github.com/kausthub-kannan/ndvs-prabandha-malai.git
+cd ndvs-prabandha-malai/app
+npm install
+npm start
+```
+
+From the Expo CLI: `a` for Android, `i` for iOS (Mac only), `w` for web.
+
+Available scripts (from `app/`): `npm start` (Metro bundler), `npm run android` / `npm run ios` / `npm run web`, `npm run lint` (ESLint), `npm run reset-project`.
+
+### Project structure
+
+- `app/app/` — screens and routing (Expo Router), including `app/app/(tabs)` tab navigation.
+- `app/components/` — reusable UI components (buttons, cards, rows, nav bars, etc.).
+- `app/assets/` — static assets, including the bundled SQLite database (`app/assets/db`).
+- `app/scripts/` — project maintenance utilities.
+
+### How to contribute
+
+- **Reporting bugs:** open a GitHub issue with a clear title, reproduction steps, expected vs. actual behaviour, and your device, OS, and Expo/React Native versions.
+- **Suggesting enhancements:** open an issue describing the feature, why it is useful, and any implementation ideas.
+- **Code contributions:**
+  1. Fork and branch from `main`.
+  2. `cd app && npm install`, then make your changes.
+  3. Test on iOS, Android, and Web where possible.
+  4. Run `npm run lint` from `app/`.
+  5. Commit with a clear message, push, and open a Pull Request.
+
+### Coding guidelines
+
+- **TypeScript:** properly typed code; avoid `any` where possible.
+- **Styling:** prefer NativeWind/Tailwind utility classes over `StyleSheet.create` for layout, spacing, typography, and colours.
+- **Components:** keep them small and reusable; split files that grow too large.
+- **Responsive + themed:** verify small mobile screens through tablet/web widths (`rem`-based scaling), and support Light/Dark mode via theme-aware styling.
+
+### Pull Request process
+
+1. Describe the problem and solution clearly; link related issues.
+2. Keep PRs small and focused on one change.
+3. Be responsive to reviewer feedback.
+
+---
+
 ## Join the Community
 
 If you would like to contribute, we would be delighted to have you join the NDVS community.

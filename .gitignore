@@ -16,3 +16,56 @@ docs/prabhandham/
 # Copies of root markdown files seeded into docs/
 docs/index.md
 docs/contributing.md
+
+# Expo / React Native app (app/) — merged from app/.gitignore
+# Paths are root-anchored with app/ prefix
+app/node_modules/
+
+app/data/
+
+app/.expo/
+app/dist/
+app/web-build/
+app/expo-env.d.ts
+
+# Native
+app/.kotlin/
+app/**/*.orig.*
+app/**/*.jks
+app/**/*.p8
+app/**/*.p12
+app/**/*.key
+app/**/*.mobileprovision
+
+# Metro
+app/**/.metro-health-check*
+
+# debug
+app/**/npm-debug.*
+app/**/yarn-debug.*
+app/**/yarn-error.*
+
+# macOS
+.DS_Store
+app/**/*.pem
+
+app/node_modules
+
+# local env files
+app/**/.env*.local
+
+# typescript
+app/**/*.tsbuildinfo
+
+app/app-example
+
+# generated native folders
+app/ios/
+app/android/
+
+# IDE / assistants (global — covers app/ too)
+.vscode/
+.claude/
+
+data/markdowns/NDVS/.obsidian
+*.csv
