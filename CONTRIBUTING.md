@@ -1,5 +1,7 @@
 # Contributing to NDVS
 
+VERSION : 0.6.0
+
 *Adiyen Dāsan* 🙏
 
 Thank you for taking the time to visit this page and for your interest in supporting **Namāmyaham Drāviḍa Veda Sāgaram (NDVS)**. Your willingness to contribute — in whatever capacity — is deeply valued.
