@@ -19,7 +19,6 @@ docs/contributing.md
 
 # Data and tabular files
 data/
-*.csv
 
 # Dependencies
 node_modules/
