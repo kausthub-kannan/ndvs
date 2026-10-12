@@ -4,7 +4,7 @@ name: Ādivaṇ Śaṭakōpa Jeer
 time_period: 1379 CE – 1458 CE
 birthplace: Tirunārāyaṇapuram
 ---
-# bio
+## bio
 
 Śrīmad Ādivaṇ Śaṭakōpan occupies a distinctive place in the Śrīvaiṣṇava tradition as the founder and first pontiff of the Ahōbila Maṭha. Tradition holds that the Lord of Ahōbilam appeared in the dream of Kiḍāmbi Śrīnivāsācār and instructed him to come to the temple town, and that from this summons grew a lineage of ascetics who have carried the worship of Lord Malōlan across the land for more than six centuries.
 
@@ -18,7 +18,7 @@ His work at Śrīraṅgam is the most extensive. He was received there with the 
 
 After sixty years of service in sannyāsa, he returned in old age to his birthplace, Melkōṭe, and attained paramapada there in April 1458. His Bṛndāvanam at Melkōṭe remains a place of devotion for his followers. He was succeeded by the eminent Nampākkam Svāmi, Śrīvaṇ Śaṭakōpa Śrīman Nārāyaṇa Yatīndra Mahādēśikan. The line he began has not broken. Till today it continues as an unbroken succession of forty-six ācāryas, and it traces the founding to 1398 CE at Ahōbilam in Andhra Pradesh. The Ahōbila Maṭha today runs schools, supports Vedic learning, and maintains centres in India and abroad. All of it rests on the single moment in which a young scholar from Melkōṭe set out for Ahōbilam in answer to a dream. Ādivaṇ Śaṭakōpan is remembered not only as an ascetic but as an institution-builder, and his life shows how a single act of surrender can grow into a tradition that outlasts empires.
 
-# taniyan_english
+## taniyan_english
 
 keśavārya kṛpāprātram dhīśamādiguṇārṇavaṁ      
 śrī śaṭāriyatiṣaṇa deśikendra mahām bhaje |
