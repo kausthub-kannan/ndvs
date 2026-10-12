@@ -5,7 +5,6 @@ time_period: Early Kali Yuga
 birthplace: "Tirukkuraiyalūr"
 uid: 12
 ---
-
 ## bio
 
 The history of the Āḻvārs reaches one of its most dramatic and vibrant expressions in the life of Tirumaṅgai Āḻvār. Few saintly figures in Indian religious history embody such a remarkable combination of courage, passion, poetic brilliance, worldly accomplishment, and spiritual transformation. His life unfolds almost like an epic narrative. He appears first as a warrior and ruler, then as a lover willing to change his life for devotion, later as a man driven to desperate measures in the service of Bhagavān's devotees, and finally as one of the greatest poet-saints of the Śrīvaiṣṇava tradition. If Nammāḻvār gave the tradition its theological depth, Tirumaṅgai Āḻvār gave it movement, energy, and geographical breadth. Through his tireless pilgrimages and extensive hymns, he preserved the memory of numerous Divya Deśams and helped shape the sacred map that continues to guide devotees today.
@@ -34,36 +33,36 @@ By the end of his life, the warrior who once sought glory on battlefields had be
 
 ## taniyan_english
 
-kalayāmi kalidhvaṃsaṃ kaviṃ lōkadivākaram |\
+kalayāmi kalidhvaṃsaṃ kaviṃ lōkadivākaram |
 yasya gōbhiḥ prakāśābhirāvidyaṃ nihataṃ tamaḥ ||
 
-vāzi paragālan vāzi kaliganṟi\
-vāzi kuṟaiyalūr vāz vēndan |\
-vāziyarō māyōnai vāḻ valiyāl mandiram koḻ\
+vāzi paragālan vāzi kaliganṟi
+vāzi kuṟaiyalūr vāz vēndan |
+vāziyarō māyōnai vāḻ valiyāl mandiram koḻ
 maṅgaiyar kōn tūyōn śuḍar māna vēl ||
 
-neñjukkiruḻ kaḍi tīpam aḍaṅgā neḍum piṟavi\
-nañjukku nalla amudam tamiz nannūl tuṟaigaḻ\
-añju kkilakkiyam āraṇa śāram |\
-paraśamaya ppañju kkanalin poṟi\
+neñjukkiruḻ kaḍi tīpam aḍaṅgā neḍum piṟavi
+nañjukku nalla amudam tamiz nannūl tuṟaigaḻ
+añju kkilakkiyam āraṇa śāram |
+paraśamaya ppañju kkanalin poṟi
 paragālan panuvalgaḻē ||
 
-eṅgaḻ kadiyē ! irāmānuja muniyē !\
-śaṅgai keḍuttāṇḍa tavarāśā |\
-poṅgu pugaz maṅgaiyar kōn īnda maṟai āyiram anaittum\
+eṅgaḻ kadiyē ! irāmānuja muniyē !
+śaṅgai keḍuttāṇḍa tavarāśā |
+poṅgu pugaz maṅgaiyar kōn īnda maṟai āyiram anaittum
 taṅgu manam nī enakku ttā ||
 
-mālai ttaniyē vazi paṟikka vēṇum enṟu\
-kōli ppadivirunda koṭravanē |\
-vēlai aṇaittaruḻum kaiyāl aḍiyēn vinaiyai\
+mālai ttaniyē vazi paṟikka vēṇum enṟu
+kōli ppadivirunda koṭravanē |
+vēlai aṇaittaruḻum kaiyāl aḍiyēn vinaiyai
 tuṇittaruḻa vēṇum tuṇindu ||
 
-muḻḻi ccezumalarō tārān muḻaimadiyam\
-koḻḻikken uḻḻam kodiyāmē |\
-vaḻḻal tiruvāḻan śīrkkaliyan kārkkaliyai veṭṭi\
+muḻḻi ccezumalarō tārān muḻaimadiyam
+koḻḻikken uḻḻam kodiyāmē |
+vaḻḻal tiruvāḻan śīrkkaliyan kārkkaliyai veṭṭi
 maruvāḻan tandān maḍal ||
 
-pon ulagil vānavarum pū magaḻum pōṭri śeyyum\
-nannudalīr ! nambi naṟaiyūrar |\
-man ulagil en nilaimai kaṇḍum iraṅgārēyām āgil\
+pon ulagil vānavarum pū magaḻum pōṭri śeyyum
+nannudalīr ! nambi naṟaiyūrar |
+man ulagil en nilaimai kaṇḍum iraṅgārēyām āgil
 mannu maḍal ūrvan vandu ||
