@@ -4,7 +4,7 @@ name: "Periya Nambi (Mahāpūrṇa)"
 time_period: "970 CE – 1050 CE"
 birthplace: "Śrīraṅgam"
 ---
-### bio
+## bio
 
 Periya Nambi, whose formal name was Mahāpūrṇar, was the foremost disciple of Āḻavandār and the teacher through whom Rāmānuja received the Śrīvaiṣṇava tradition. According to the traditional account, he was born at Śrīraṅgam in the Bhāradvāja gotra and is revered as an incarnation of Kumudākṣa, one of the gatekeepers (_dvārapālakas_) of Śrī Vaikuṇṭham. As his ācārya instructed, he remained at Śrīraṅgam teaching the traditional texts of Viśiṣṭādvaita. His six disciples were Emperumānār (Rāmānuja), Malai Kuniya Niṉṟār, Ārya Śrī Śaṭhakopa Dāsar, Aṇiyaraṅgattamudaṉār, Tiruvāikkulamudaiyān Bhaṭṭar, and Tirukkacchi Nambi.
 

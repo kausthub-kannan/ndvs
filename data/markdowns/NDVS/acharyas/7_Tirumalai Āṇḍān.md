@@ -4,6 +4,8 @@ name: "Tirumalai Āṇḍān"
 time_period: "970 CE – 1060 CE"
 birthplace: Tirupati
 ---
+## bio
+
 Tirumālaiyāṇḍān was one of the fifteen disciples who took refuge at the feet of Āḻavandār, and he is remembered as the teacher who taught Rāmānuja the meaning of the _Tiruvāymoḻi_. In Āḻavandār’s last days, he was among the senior disciples, along with Tiruvaraṅga Perumāḷ Araiyar, Periya Nambi, and Tirukkōṣṭiyūr Nambi, who asked their ācārya for the deepest teaching on surrender (_prapatti_). Āḻavandār told them to seek the grace of a true ācārya, surrender to the Lord in faith, live in remembrance of the lineage of teachers, and perform the obligatory and permitted services without fail.
 
 His best-known role came after Rāmānuja had learnt the meaning of the _tirumantra_ and the _carama śloka_ from Tirukkōṣṭiyūr Nambi. Rāmānuja asked Periya Nambi to bless him with the teaching of the _Tiruvāymoḻi_. Periya Nambi was pleased and sent him first to Tiruvaraṅga Perumāḷ Araiyar for the “good words” (_nal vārttaikaḷ_) and a first instruction in the _Tiruvāymoḻi_. After that, he directed Rāmānuja to learn its full meaning from Tirumālaiyāṇḍān. Rāmānuja approached him with humility, and Āṇḍān taught him the meaning of the _Tiruvāymoḻi_ verse by verse in daily sessions.

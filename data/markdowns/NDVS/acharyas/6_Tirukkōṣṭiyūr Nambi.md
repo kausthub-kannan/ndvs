@@ -4,6 +4,8 @@ name: "Tirukkōṣṭiyūr Nambi"
 time_period: "970 CE – 1060 CE"
 birthplace: "Tirukkōṣṭiyūr"
 ---
+## bio
+
 Tirukkōṣṭiyūr Nambi, named for his home at Tirukkōṣṭiyūr, was one of the fifteen disciples who took refuge at the feet of Āḻavandār, and he is remembered as the teacher who gave Rāmānuja the meaning of the two most precious mantras of the tradition. In Āḻavandār’s last days, he was among the senior disciples, along with Tiruvaraṅga Perumāḷ Araiyar and Periya Nambi, who asked their ācārya for the deepest teaching on surrender (_prapatti_). Āḻavandār told them to seek the grace of a true ācārya, surrender to the Lord in faith, live in remembrance of the lineage of teachers, and perform the obligatory and permitted services without fail.
 
 His best-known role came after Rāmānuja became a disciple of Periya Nambi. Periya Nambi directed Rāmānuja to learn the meaning of the _tirumantra_ (the eight-syllable mantra) and the _carama śloka_ from Tirukkōṣṭiyūr Nambi. Rāmānuja went to Tirukkōṣṭiyūr, reached Nambi’s house, and prostrated, asking for the teaching. Nambi, wishing to impress the supreme importance of these mantras and to test the sincerity of the student, said he would teach it later and sent him away. Rāmānuja returned to Śrīraṅgam, and the same thing happened seventeen times. On one visit to Śrīraṅgam, some elders there expressed their sorrow at how strictly Nambi was testing him. Nambi said nothing, returned home, and sent a Śrīvaiṣṇava to bring Rāmānuja to Tirukkōṣṭiyūr.
